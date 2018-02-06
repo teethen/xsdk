@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="google_colors">
+        <item>@color/google_red</item>
+        <item>@color/google_blue</item>
+        <item>@color/google_yellow</item>
+        <item>@color/google_green</item>
+    </integer-array>
+
+    <string-array name="auto_download">
+        <item>仅WiFi网络</item>
+        <item>从不</item>
+    </string-array>
+
+    <string-array name="office_type">
+        <item>.doc</item>
+        <item>.docx</item>
+        <item>.xls</item>
+        <item>.xlsx</item>
+        <item>.ppt</item>
+        <item>.pptx</item>
+    </string-array>
+
+    <string-array name="number_standard">
+        <item>0</item>
+        <item>20</item>
+        <item>30</item>
+        <item>60</item>
+        <item>80</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="font_size">
+        <item>小</item>
+        <item>标准</item>
+        <item>大</item>
+        <item>较大</item>
+    </string-array>
+
+</resources>

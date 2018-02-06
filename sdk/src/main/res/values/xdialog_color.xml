@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--colordialog begin-->
+    <color name="color_dialog_gray">#ededf3</color>
+    <!--<color name="color_dialog_content">#ed7861</color>-->
+    <color name="color_dialog_content">#ffffff</color>
+    <color name="color_dialog_title">#303030</color>
+    <color name="color_dialog_content_prompt">#343434</color>
+    <color name="color_type_info">#79b3e4</color>
+    <color name="color_type_help">#e8bd4b</color>
+    <color name="color_type_wrong">#ed7861</color>
+    <color name="color_type_warning">#e8bd4b</color>
+    <!--<color name="color_type_success">#90b06e</color>-->
+    <color name="color_type_success">#328183</color>
+    <!--colordialog end-->
+
+    <!--dialogui begin-->
+    <color name="ios_btntext_blue">#007aff</color>
+    <color name="text_title_11">#111111</color>
+    <color name="text_msg_33">#333333</color>
+    <color name="text_input_44">#444444</color>
+    <color name="text_item_33">#333333</color>
+    <color name="btn_alert">#222222</color>
+    <color name="line_dd">#dddddd</color>
+    <color name="bg_white">#ffffff</color>
+    <color name="text_gray">#999999</color>
+    <color name="text_gray_light">#B3B3B3</color>
+    <color name="text_black">#333333</color><!--正式发布时改成666666-->
+    <color name="text_black_light">#666666</color><!--正式发布时改成666666-->
+    <color name="color_text_black">#4c4c4c</color>
+    <color name="color_toast_black">#FF484c4c</color><!--#99000000-->
+    <color name="color_tie_bg">#efeff4</color>
+    <color name="color_tie_normal">#ffffff</color>
+    <color name="color_tie_select">#efeff4</color>
+    <color name="dialogui_btn_normal">#ffffff</color>
+    <color name="dialogui_btn_pressed">#eeeeee</color>
+    <color name="datepick_surance_blue">#0595f5</color>
+    <!--dialogui end-->
+</resources>

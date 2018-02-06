@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--阿里云-->
+    <color name="color_b0">#000000</color>
+    <color name="color_b1">#020103</color>
+    <color name="color_b2">#1A1A1B</color>
+    <color name="color_b3">#23292A</color>
+    <color name="color_b4">#2C3538</color>
+    <color name="color_b5">#353F42</color>
+    <color name="color_c1">#15A9BF</color>
+    <color name="color_c2">#18B2CB</color>
+    <color name="color_c3">#0FD4E9</color>
+    <color name="color_c4">#12D1E5</color>
+    <color name="color_c5">#47E3EF</color>
+    <!--华为-->
+    <color name="color_hb1">#1D4C7A</color>
+    <color name="color_hb2">#183A5D</color>
+    <color name="color_hb3">#10263D</color>
+    <color name="color_ht1">#78A7C5</color>
+    <color name="color_hb4">#4A6E7E</color>
+    <color name="color_hb5">#234D6E</color>
+    <color name="color_hb6">#112B3A</color>
+</resources>

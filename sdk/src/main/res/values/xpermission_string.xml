@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_calendar">Calendar</string>
+    <string name="permission_camera">Camera</string>
+    <string name="permission_contacts">Contacts</string>
+    <string name="permission_location">Location</string>
+    <string name="permission_microphone">Microphone</string>
+    <string name="permission_phone">Phone</string>
+    <string name="permission_sensors">Body Sensors</string>
+    <string name="permission_sms">SMS</string>
+    <string name="permission_storage">Storage</string>
+</resources>

@@ -1,0 +1,39 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.teethen.sdk">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.teethen.sdk.media.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/download" />
+        </provider>
+        <activity
+            android:name=".xmediapicker.activities.MediaPickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MediaPickerTheme" />
+        <activity
+            android:name=".xwidget.zxing.ScanZxingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".xwidget.zbar.ScanZbarActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".xwidget.photoview.PhotoViewPagerActivity" />
+        <activity android:name=".xwidget.photoview.PhotoViewGlideActivity" />
+    </application>
+
+</manifest>

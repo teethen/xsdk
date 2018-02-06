@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00796B</color>
+    <color name="colorAccent">#03DDFD,00C2DE</color>-->
+    <!--<color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>-->
+    <color name="colorPrimary">#1D4C7A</color>
+    <color name="colorPrimaryDark">#183A5D</color>
+    <color name="colorAccent">#00C5DE</color>
+    <color name="colorBackground">#EBEBEB</color>
+    <color name="colorTextPrimary">#393A3F</color>
+    <color name="colorSeekBar">#2ED184</color>
+    <color name="colorSeekBarDefault">#C3C3C3</color>
+
+    <color name="cyan">#00BCD4</color>
+    <color name="darkCyan">#00B4B2</color>
+    <color name="deepCyan">#07ACA7</color>
+    <color name="teal">#FF009688</color>
+    <color name="deepTeal">#FF018A7B</color>
+    <color name="green">#4CAF50</color>
+    <color name="blue">#448AFF</color>
+    <color name="lightBlue">#03A9F4</color>
+    <color name="orange">#FF9800</color>
+    <color name="lime">#CDDC39</color>
+    <color name="amber">#FFC107</color>
+    <color name="pink">#E91E63</color>
+    <color name="deepOrange">#FF5722</color>
+
+    <color name="google_red">#FFC93437</color>
+    <color name="google_blue">#FF375BF1</color>
+    <color name="google_yellow">#FFF7D23E</color>
+    <color name="google_green">#FF34A350</color>
+
+    <color name="white">@android:color/white</color>
+    <color name="black">#212121</color>
+    <color name="darkGray">#757575</color>
+    <color name="lightGray">#BDBDBD</color>
+    <color name="lineGray">#DFDFDF</color>
+    <color name="transparent">#33000000</color>
+    <color name="indicator_selected">@android:color/white</color>
+    <color name="indicator_unselected">#4D000000</color>
+    <color name="stepview_uncompleted">#A3E0D9</color>
+    <color name="stepview_uncompleted_text">#F8F8F8</color>
+
+</resources>

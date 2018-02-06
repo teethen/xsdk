@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">sdk</string>
+
+    <string name="act_qr_scanner">二维码/条码</string>
+
+    <string name="action_flashlight">打开/关闭 闪光灯</string>
+    <string name="action_flashlight_on">打开闪光灯</string>
+    <string name="action_flashlight_off">关闭闪光灯</string>
+    <string name="action_scanning_on">继续扫描</string>
+    <string name="qr_scan_tip">将二维码/条码放入框内，即可自动扫描</string>
+    <string name="camera_failure">相机连接失败</string>
+    <string name="camera_hint">您未启用相机权限，或者相机被其它应用占用，请检查后再使用。</string>
+    <string name="permission_denied">权限被拒绝</string>
+    <string name="camera_open_failed">无法打开相机，请检查后重试。</string>
+
+    <string name="btn_ok">确定</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_close">关闭</string>
+    <string name="btn_yes">是</string>
+    <string name="btn_no">否</string>
+    <string name="btn_exit">退出</string>
+
+    <string name="error">错误</string>
+    <string name="error_unknown">发生未知错误...</string>
+
+    <string name="load_login">正在登录....</string>
+    <string name="load_loading">正在加载....</string>
+    <string name="load_more">加载更多....</string>
+    <string name="load_empty">暂无数据</string>
+    <string name="load_failed">加载失败，点击重试</string>
+    <string name="load_failure">加载失败</string>
+    <string name="load_finished">我是有底线的</string>
+
+</resources>

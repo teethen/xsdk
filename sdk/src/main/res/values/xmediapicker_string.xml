@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="waiting">等待&#8230;</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="ok">确定</string>
+
+    <string name="picker_take_photo">拍摄照片</string>
+    <string name="picker_record_video">录制视频</string>
+    <string name="picker_switch_media">切换多媒体</string>
+    <string name="picker_switch_image">切换到照片</string>
+    <string name="picker_switch_video">切换到视频</string>
+    <string name="picker_no_items">无任何记录</string>
+    <string name="picker_done_capital">完成</string>
+
+    <plurals name="picker_video_duration_min">
+        <item quantity="one">视频时长小于 %d 秒</item>
+        <item quantity="other">视频时长小于 %d 秒</item>
+    </plurals>
+    <plurals name="picker_video_duration_max">
+        <item quantity="one">视频时长大于 %d 秒</item>
+        <item quantity="other">视频时长大于 %d 秒</item>
+    </plurals>
+    <plurals name="picker_video_duration_warning">
+        <item quantity="one">视频时长限制 %d 秒(内)</item>
+        <item quantity="other">视频时长限制 %d 秒(内)</item>
+    </plurals>
+</resources>
