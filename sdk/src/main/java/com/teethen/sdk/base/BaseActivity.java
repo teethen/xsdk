@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -57,6 +58,22 @@ public class BaseActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void initToolBar(Toolbar toolbar, String title, boolean... homeAsUpEnabled) {
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+            toolbar.setTitle(title);
+        }
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            boolean homeAsUp = true;
+            if (homeAsUpEnabled != null && homeAsUpEnabled.length > 0) {
+                homeAsUp = homeAsUpEnabled[0];
+            }
+            actionBar.setDisplayHomeAsUpEnabled(homeAsUp);
+            actionBar.setTitle(title);
+        }
     }
 
     public void initToolBar(int toolbarId, String title, boolean... homeAsUpEnabled) {

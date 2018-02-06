@@ -2,6 +2,10 @@
     <string name="app_name">sdk</string>
 
     <string name="act_qr_scanner">二维码/条码</string>
+    <string name="act_pdf_view">PDF阅读器</string>
+
+    <string name="pdf_pick_file">Pick file</string>
+    <string name="pdf_pick_file_error">Unable to pick file. Check status of file manager.</string>
 
     <string name="action_flashlight">打开/关闭 闪光灯</string>
     <string name="action_flashlight_on">打开闪光灯</string>

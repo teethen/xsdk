@@ -57,6 +57,7 @@ public class XConstant {
 
     //文件配置
     public static final String MIME_HTML = "text/html";
+    public static final String MIME_PDF = "application/pdf";
     public static final String MIME_ANDROID = "application/vnd.android.package-archive";
     public static final String SCHEME_FILE = "file";
     public static final String SCHEME_CONTENT = "content";

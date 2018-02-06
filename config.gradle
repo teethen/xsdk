@@ -27,14 +27,15 @@ ext {
             support_vector_drawable : "com.android.support:support-vector-drawable:${supportVersion}",
             constraint_layout       : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
             customtabs              : "com.android.support:customtabs:${supportVersion}",
-            //butterknife             : "com.jakewharton:butterknife:8.8.1",
-            //eventbus                : "org.greenrobot:eventbus:3.1.1",
+            butterknife             : "com.jakewharton:butterknife:8.8.1",
+            eventbus                : "org.greenrobot:eventbus:3.1.1",
             fastjson                : "com.alibaba:fastjson:1.1.67.android",
-            //gson                    : "com.google.code.gson:gson:2.8.2",
+            gson                    : "com.google.code.gson:gson:2.8.2",
+            glide                   : "com.github.bumptech.glide:glide:3.7.0",
             okhttp                  : "com.squareup.okhttp3:okhttp:3.9.1",
             okio                    : "com.squareup.okio:okio:1.13.0",
-            glide                   : "com.github.bumptech.glide:glide:3.7.0",
-            //zhihu                   : "com.zhihu.android:matisse:0.4.3",
+            pdfviewer               : "com.github.barteksc:android-pdf-viewer:2.8.2",
+            zhihu                   : "com.zhihu.android:matisse:0.4.3",
             zxing                   : "com.google.zxing:core:3.3.1"
     ]
 }

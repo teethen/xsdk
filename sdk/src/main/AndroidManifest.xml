@@ -32,8 +32,9 @@
             android:name=".xwidget.zbar.ScanZbarActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".xwidget.photoview.PhotoViewPagerActivity" />
         <activity android:name=".xwidget.photoview.PhotoViewGlideActivity" />
+        <activity android:name=".xwidget.photoview.PhotoViewPagerActivity" />
+        <activity android:name=".xpdf.PdfViewActivity" />
     </application>
 
 </manifest>
