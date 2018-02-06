@@ -17,7 +17,7 @@ public class BaseTextView extends LinearLayout {
 
     private TextView topTextView, centerTextView, bottomTextView;
 
-    private LayoutParams topTVParams, centerTVParams, bottomTVParams;
+    private LinearLayout.LayoutParams topTVParams, centerTVParams, bottomTVParams;
 
     public BaseTextView(Context context) {
         this(context, null);
@@ -71,7 +71,7 @@ public class BaseTextView extends LinearLayout {
     }
 
 
-    private TextView initTextView(LayoutParams params, TextView textView) {
+    private TextView initTextView(LinearLayout.LayoutParams params, TextView textView) {
 
         textView = getTextView(textView, params);
 //        textView.setGravity(Gravity.CENTER);
@@ -87,7 +87,7 @@ public class BaseTextView extends LinearLayout {
      * @param layoutParams 对象
      * @return 返回
      */
-    public TextView getTextView(TextView textView, LayoutParams layoutParams) {
+    public TextView getTextView(TextView textView, LinearLayout.LayoutParams layoutParams) {
         if (textView == null) {
             textView = new TextView(mContext);
             textView.setLayoutParams(layoutParams);
@@ -104,7 +104,7 @@ public class BaseTextView extends LinearLayout {
      */
     public LayoutParams getParams(LayoutParams params) {
         if (params == null) {
-            params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         }
         return params;
     }
@@ -160,9 +160,9 @@ public class BaseTextView extends LinearLayout {
     }
 
     public void setCenterSpaceHeight(int centerSpaceHeight) {
-        topTVParams.setMargins(0, 0, 0, centerSpaceHeight / 2);
-        centerTVParams.setMargins(0, centerSpaceHeight / 2, 0, centerSpaceHeight / 2);
-        bottomTVParams.setMargins(0, centerSpaceHeight / 2, 0, 0);
+        topTVParams.setMargins(0, 0, 0, centerSpaceHeight);
+        centerTVParams.setMargins(0, 0, 0, 0);
+        bottomTVParams.setMargins(0, centerSpaceHeight, 0, 0);
     }
 
 }
