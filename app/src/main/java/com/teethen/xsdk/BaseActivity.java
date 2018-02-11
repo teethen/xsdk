@@ -67,6 +67,10 @@ public class BaseActivity extends AppCompatActivity {
 
     public void initToolBar(int toolbarId, String title, boolean... homeAsUpEnabled) {
         Toolbar toolbar = (Toolbar) findViewById(toolbarId);
+        initToolBar(toolbar, title, homeAsUpEnabled);
+    }
+
+    public void initToolBar(Toolbar toolbar, String title, boolean... homeAsUpEnabled) {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             toolbar.setTitle(title);

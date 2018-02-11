@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.teethen.sdk.xpdf.PdfViewActivity">
+    tools:context="com.teethen.xsdk.PdfViewActivity">
 
-    <include layout="@layout/layout_toolbar"/>
+    <include layout="@layout/toolbar"/>
 
     <com.github.barteksc.pdfviewer.PDFView
         android:id="@+id/pdfView"

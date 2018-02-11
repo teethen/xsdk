@@ -58,6 +58,5 @@ dependencies {
     implementation rootProject.ext.dependencies.glide
     implementation rootProject.ext.dependencies.okhttp
     implementation rootProject.ext.dependencies.okio
-    implementation rootProject.ext.dependencies.pdfviewer
     implementation rootProject.ext.dependencies.zxing
 }

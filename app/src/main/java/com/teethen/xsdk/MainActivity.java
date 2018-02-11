@@ -29,6 +29,7 @@ public class MainActivity extends BaseActivity {
 
     private void initViews() {
 
+        //字体大小
         findViewById(R.id.btn_font_size).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +38,16 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        //pdf预览
+        findViewById(R.id.btn_pdf_viewer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PdfViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //QR Scan By Zbar
         findViewById(R.id.btn_qr_zxing).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +56,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        //QR Scan By Zxing
         findViewById(R.id.btn_qr_zbar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +65,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        //单张图片预览
         findViewById(R.id.btn_pv_single).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,11 +74,28 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        //多张图片预览
         findViewById(R.id.btn_pv_multiple).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 List<String> uriList = PhotoViewTest.getBaiduImgs();
                 PhotoViewUtil.startViewPagerWithUrl(MainActivity.this, uriList);
+            }
+        });
+
+        //九宫格 简单实现
+        findViewById(R.id.btn_gv_liteview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showToast("等待实现 简单九宫格");
+            }
+        });
+
+        //九宫格 稍微复杂实现
+        findViewById(R.id.btn_gv_complex).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showToast("等待实现 复杂九宫格");
             }
         });
     }

@@ -45,4 +45,6 @@ dependencies {
     implementation rootProject.ext.dependencies.glide
     implementation rootProject.ext.dependencies.okhttp
     implementation rootProject.ext.dependencies.okio
+    implementation rootProject.ext.dependencies.pdfviewer
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 }

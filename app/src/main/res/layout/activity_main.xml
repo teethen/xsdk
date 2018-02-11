@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.teethen.xsdk.MainActivity">
 
-    <include layout="@layout/layout_toolbar" />
+    <include layout="@layout/toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,6 +20,7 @@
 
             <TableRow>
                 <Button android:id="@+id/btn_font_size" android:text="FontSize" android:textAllCaps="false" />
+                <Button android:id="@+id/btn_pdf_viewer" android:text="PdfViewer" android:textAllCaps="false" />
             </TableRow>
 
             <TableRow>
@@ -30,6 +31,11 @@
             <TableRow>
                 <Button android:id="@+id/btn_pv_single" android:text="Single PhotoView" android:textAllCaps="false" />
                 <Button android:id="@+id/btn_pv_multiple" android:text="Multiple PhotoView" android:textAllCaps="false" />
+            </TableRow>
+
+            <TableRow>
+                <Button android:id="@+id/btn_gv_liteview" android:text="Simple GridView" android:textAllCaps="false" />
+                <Button android:id="@+id/btn_gv_complex" android:text="Complex GridView" android:textAllCaps="false" />
             </TableRow>
 
         </TableLayout>

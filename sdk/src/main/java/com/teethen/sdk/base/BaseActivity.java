@@ -60,24 +60,12 @@ public class BaseActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void initToolBar(Toolbar toolbar, String title, boolean... homeAsUpEnabled) {
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-            toolbar.setTitle(title);
-        }
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            boolean homeAsUp = true;
-            if (homeAsUpEnabled != null && homeAsUpEnabled.length > 0) {
-                homeAsUp = homeAsUpEnabled[0];
-            }
-            actionBar.setDisplayHomeAsUpEnabled(homeAsUp);
-            actionBar.setTitle(title);
-        }
-    }
-
     public void initToolBar(int toolbarId, String title, boolean... homeAsUpEnabled) {
         Toolbar toolbar = (Toolbar) findViewById(toolbarId);
+        initToolBar(toolbar, title, homeAsUpEnabled);
+    }
+
+    public void initToolBar(Toolbar toolbar, String title, boolean... homeAsUpEnabled) {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             toolbar.setTitle(title);
