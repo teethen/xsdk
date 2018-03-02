@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/margin8"
+    android:padding="@dimen/margin8">
+
+    <com.teethen.sdk.xwidget.ninegrid.simple.NineGridImageView
+        android:id="@+id/ninegrid_iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:imgGap="3dp"
+        app:showStyle="grid"
+        app:singleImgSize="300dp" />
+
+</LinearLayout>
