@@ -1,8 +1,8 @@
-package com.teethen.sdk.Refreshmore;
+package com.teethen.sdk.xrefresh.refreshmore;
 
 import android.view.View;
 
-import com.teethen.sdk.Refreshmore.indicator.PtrIndicator;
+import com.teethen.sdk.xrefresh.refreshmore.indicator.PtrIndicator;
 
 public interface PtrHandler {
 

@@ -1,6 +1,6 @@
-package com.teethen.sdk.Refreshmore;
+package com.teethen.sdk.xrefresh.refreshmore;
 
-import com.teethen.sdk.Refreshmore.indicator.PtrIndicator;
+import com.teethen.sdk.xrefresh.refreshmore.indicator.PtrIndicator;
 
 /**
  * A single linked list to wrap PtrUIHandler

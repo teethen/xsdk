@@ -1,4 +1,4 @@
-package com.teethen.xsdk;
+package com.teethen.xsdk.activity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 import com.teethen.sdk.base.XConstant;
 import com.teethen.sdk.xutil.ControlUtil;
 import com.teethen.sdk.xwidget.seekbar.RangeSeekBar;
+import com.teethen.xsdk.R;
+import com.teethen.xsdk.SpKeys;
 
 public class SettingsFontSizeActivity extends BaseActivity {
     private final String TAG = "SettingsFontSize";

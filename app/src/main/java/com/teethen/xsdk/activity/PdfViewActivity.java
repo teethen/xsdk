@@ -1,4 +1,4 @@
-package com.teethen.xsdk;
+package com.teethen.xsdk.activity;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -26,6 +26,7 @@ import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 import com.shockwave.pdfium.PdfDocument;
 import com.teethen.sdk.base.XConstant;
 import com.teethen.sdk.xutil.FileUtil;
+import com.teethen.xsdk.R;
 
 import java.lang.reflect.Method;
 import java.util.List;

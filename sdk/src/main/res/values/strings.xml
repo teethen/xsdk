@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">sdk</string>
+    <string name="icon">icon</string>
 
     <string name="act_qr_scanner">二维码/条码</string>
     <string name="act_pdf_view">PDF阅读器</string>
 
+    <string name="recent_files">Recent files</string>
     <string name="pdf_pick_file">Pick file</string>
     <string name="pdf_pick_file_error">Unable to pick file. Check status of file manager.</string>
 

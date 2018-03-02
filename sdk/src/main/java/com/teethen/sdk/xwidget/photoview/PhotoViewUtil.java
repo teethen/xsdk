@@ -29,7 +29,6 @@ public class PhotoViewUtil {
         }
     }
 
-
     public static void startViewPagerWithId(Context context, ArrayList<Integer> idList) {
         try {
             Intent intent = new Intent(context, PhotoViewPagerActivity.class);

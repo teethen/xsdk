@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.teethen.sdk.Refreshmore.header;
+package com.teethen.sdk.xrefresh.refreshmore.header;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -28,7 +28,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.*;
 import android.view.animation.Interpolator;
-import com.teethen.sdk.Refreshmore.util.PtrLocalDisplay;
+import com.teethen.sdk.xrefresh.refreshmore.util.PtrLocalDisplay;
 
 import java.util.ArrayList;
 

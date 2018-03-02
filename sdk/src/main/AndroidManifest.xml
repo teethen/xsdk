@@ -13,7 +13,9 @@
     <uses-feature android:name="android.hardware.camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
-    <application>
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.teethen.sdk.media.fileProvider"
@@ -36,6 +38,7 @@
 
         <activity android:name=".xwidget.photoview.PhotoViewGlideActivity" />
         <activity android:name=".xwidget.photoview.PhotoViewPagerActivity" />
+        <activity android:name=".xwidget.ninegrid.preview.ImagePreviewActivity" />
 
     </application>
 

@@ -1,4 +1,4 @@
-package com.teethen.sdk.Refreshmore.header;
+package com.teethen.sdk.xrefresh.refreshmore.header;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;

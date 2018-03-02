@@ -21,15 +21,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingsFontSizeActivity" />
-        <activity android:name=".PdfViewActivity" />
+        <activity android:name=".activity.SettingsFontSizeActivity" />
+        <activity android:name=".activity.PdfViewActivity" />
+        <activity android:name=".activity.TestActivity" />
+        <activity android:name=".activity.BottomNavigationActivity" />
+        <activity android:name=".activity.BottomNavigationViewPagerActivity" />
+        <activity android:name=".ninegrid.complex.news.NewsActivity" />
+        <activity android:name=".ninegrid.complex.news.NewsLinkActivity" />
+        <activity android:name=".ninegrid.simple.SimpleNineGridActivity"></activity>
     </application>
 
 </manifest>

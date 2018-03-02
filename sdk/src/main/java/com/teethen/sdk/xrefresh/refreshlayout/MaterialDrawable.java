@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.teethen.sdk.Refreshlayout;
+package com.teethen.sdk.xrefresh.refreshlayout;
 
 import android.content.Context;
 import android.content.res.Resources;

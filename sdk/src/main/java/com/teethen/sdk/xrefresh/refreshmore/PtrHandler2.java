@@ -1,4 +1,4 @@
-package com.teethen.sdk.Refreshmore;
+package com.teethen.sdk.xrefresh.refreshmore;
 
 import android.view.View;
 

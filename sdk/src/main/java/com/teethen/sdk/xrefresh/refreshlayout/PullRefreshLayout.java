@@ -1,4 +1,4 @@
-package com.teethen.sdk.Refreshlayout;
+package com.teethen.sdk.xrefresh.refreshlayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;

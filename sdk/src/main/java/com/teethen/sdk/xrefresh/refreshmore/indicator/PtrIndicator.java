@@ -1,4 +1,4 @@
-package com.teethen.sdk.Refreshmore.indicator;
+package com.teethen.sdk.xrefresh.refreshmore.indicator;
 
 import android.graphics.PointF;
 

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ececec"
+    tools:context=".activity.BottomNavigationViewPagerActivity">
+
+    <!--标题栏-->
+    <!--<include layout="@layout/toolbar" android:id="@+id/nav_toolbar" />-->
+    <!--底部导航-->
+    <!--<com.teethen.sdk.xbottom.navigation.BottomNavigationBar
+        android:id="@+id/bottom_nav_bar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true">
+    </com.teethen.sdk.xbottom.navigation.BottomNavigationBar>-->
+    <!--内容区域-->
+    <!--<android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/nav_toolbar"
+        android:layout_above="@+id/bottom_nav_bar_container"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <FrameLayout
+            android:id="@+id/bottom_nav_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.v4.widget.NestedScrollView>-->
+
+    <include layout="@layout/toolbar" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/bottom_nav_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <com.teethen.sdk.xbottom.navigation.BottomNavigationBar
+        android:id="@+id/bottom_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true" />
+
+</LinearLayout>

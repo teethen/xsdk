@@ -1,45 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.teethen.xsdk.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:context=".activity.MainActivity">
 
-    <include layout="@layout/toolbar" />
-
-    <ScrollView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin5">
+        android:layout_height="wrap_content">
 
-        <TableLayout
+        <include layout="@layout/toolbar" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </android.support.v4.view.ViewPager>
 
-            <TableRow>
-                <Button android:id="@+id/btn_font_size" android:text="FontSize" android:textAllCaps="false" />
-                <Button android:id="@+id/btn_pdf_viewer" android:text="PdfViewer" android:textAllCaps="false" />
-            </TableRow>
+        <com.teethen.sdk.xbottom.barlayout.BottomBarLayout
+            android:id="@+id/bbl"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center">
 
-            <TableRow>
-                <Button android:id="@+id/btn_qr_zxing" android:text="zxing" android:textAllCaps="false" />
-                <Button android:id="@+id/btn_qr_zbar" android:text="zbar" android:textAllCaps="false" />
-            </TableRow>
+            <com.teethen.sdk.xbottom.barlayout.BottomBarItem
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:iconNormal="@drawable/tab_home_normal"
+                app:iconSelected="@drawable/tab_home_selected"
+                app:itemText="首页"
+                app:textColorNormal="@color/tab_normal_color"
+                app:textColorSelected="@color/tab_selected_color"
+                app:itemTextSize="8sp"
+                app:itemMarginTop="-5dp"
+                app:openTouchBg="true"
+                app:touchDrawable="@drawable/bg_tab_selected"/>
 
-            <TableRow>
-                <Button android:id="@+id/btn_pv_single" android:text="Single PhotoView" android:textAllCaps="false" />
-                <Button android:id="@+id/btn_pv_multiple" android:text="Multiple PhotoView" android:textAllCaps="false" />
-            </TableRow>
+            <com.teethen.sdk.xbottom.barlayout.BottomBarItem
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:iconNormal="@drawable/tab_video_normal"
+                app:iconSelected="@drawable/tab_video_selected"
+                app:itemText="视频"
+                app:textColorNormal="@color/tab_normal_color"
+                app:textColorSelected="@color/tab_selected_color"
+                app:itemTextSize="8sp"
+                app:itemMarginTop="-5dp"
+                app:openTouchBg="true"
+                app:unreadThreshold="999"
+                app:touchDrawable="@drawable/bg_tab_selected"/>
 
-            <TableRow>
-                <Button android:id="@+id/btn_gv_liteview" android:text="Simple GridView" android:textAllCaps="false" />
-                <Button android:id="@+id/btn_gv_complex" android:text="Complex GridView" android:textAllCaps="false" />
-            </TableRow>
+            <com.teethen.sdk.xbottom.barlayout.BottomBarItem
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:iconNormal="@drawable/tab_micro_normal"
+                app:iconSelected="@drawable/tab_micro_selected"
+                app:itemText="微头条"
+                app:textColorNormal="@color/tab_normal_color"
+                app:textColorSelected="@color/tab_selected_color"
+                app:itemTextSize="8sp"
+                app:itemMarginTop="-5dp"
+                app:openTouchBg="true"
+                app:touchDrawable="@drawable/bg_tab_selected"/>
 
-        </TableLayout>
+            <com.teethen.sdk.xbottom.barlayout.BottomBarItem
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:iconNormal="@drawable/tab_me_normal"
+                app:iconSelected="@drawable/tab_me_selected"
+                app:itemText="我的"
+                app:textColorNormal="@color/tab_normal_color"
+                app:textColorSelected="@color/tab_selected_color"
+                app:itemTextSize="8sp"
+                app:itemMarginTop="-5dp"
+                app:openTouchBg="true"
+                app:touchDrawable="@drawable/bg_tab_selected"/>
 
-    </ScrollView>
+        </com.teethen.sdk.xbottom.barlayout.BottomBarLayout>
 
-</LinearLayout>
+    </LinearLayout>
+
+    <!--侧边导航-->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_header_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/main_drawer" />
+
+</android.support.v4.widget.DrawerLayout>
+

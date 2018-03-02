@@ -1,4 +1,4 @@
-package com.teethen.sdk.Refreshmore;
+package com.teethen.sdk.xrefresh.refreshmore;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import com.teethen.sdk.R;
-import com.teethen.sdk.Refreshmore.indicator.PtrIndicator;
-import com.teethen.sdk.Refreshmore.util.PtrCLog;
+import com.teethen.sdk.xrefresh.refreshmore.indicator.PtrIndicator;
+import com.teethen.sdk.xrefresh.refreshmore.util.PtrCLog;
 
 /**
  * This layout view for "Pull to Refresh(Ptr)" support all of the view, you can contain everything you want.

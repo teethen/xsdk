@@ -1,4 +1,4 @@
-package com.teethen.xsdk;
+package com.teethen.xsdk.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,22 +8,21 @@ import android.view.View;
 import com.teethen.sdk.xwidget.photoview.PhotoViewUtil;
 import com.teethen.sdk.xwidget.zbar.ScanZbarActivity;
 import com.teethen.sdk.xwidget.zxing.ScanZxingActivity;
+import com.teethen.xsdk.R;
+import com.teethen.xsdk.ninegrid.complex.news.NewsActivity;
+import com.teethen.xsdk.ninegrid.simple.SimpleNineGridActivity;
 import com.teethen.xsdk.test.PhotoViewTest;
 
 import java.util.List;
 
-public class MainActivity extends BaseActivity {
-
-    private static final int QR_REQ_COED_ZXING = 262;
-    private static final int QR_REQ_COED_ZBAR = 263;
+public class TestActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test);
 
-        initToolBar(R.id.toolbar, getString(R.string.app_name), false);
-
+        initToolBar(R.id.toolbar, "测试", true);
         initViews();
     }
 
@@ -33,7 +32,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn_font_size).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SettingsFontSizeActivity.class);
+                Intent intent = new Intent(TestActivity.this, SettingsFontSizeActivity.class);
                 startActivity(intent);
             }
         });
@@ -42,7 +41,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn_pdf_viewer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PdfViewActivity.class);
+                Intent intent = new Intent(TestActivity.this, PdfViewActivity.class);
                 startActivity(intent);
             }
         });
@@ -51,7 +50,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn_qr_zxing).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent zbar = new Intent(MainActivity.this, ScanZxingActivity.class);
+                Intent zbar = new Intent(TestActivity.this, ScanZxingActivity.class);
                 startActivityForResult(zbar, QR_REQ_COED_ZXING);
             }
         });
@@ -60,7 +59,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn_qr_zbar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent zbar = new Intent(MainActivity.this, ScanZbarActivity.class);
+                Intent zbar = new Intent(TestActivity.this, ScanZbarActivity.class);
                 startActivityForResult(zbar, QR_REQ_COED_ZBAR);
             }
         });
@@ -70,7 +69,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 String url = PhotoViewTest.getBaiduSingleImg();
-                PhotoViewUtil.startViewWithGlide(MainActivity.this, url);
+                PhotoViewUtil.startViewWithGlide(TestActivity.this, url);
             }
         });
 
@@ -79,7 +78,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 List<String> uriList = PhotoViewTest.getBaiduImgs();
-                PhotoViewUtil.startViewPagerWithUrl(MainActivity.this, uriList);
+                PhotoViewUtil.startViewPagerWithUrl(TestActivity.this, uriList);
             }
         });
 
@@ -87,7 +86,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn_gv_liteview).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showToast("等待实现 简单九宫格");
+                jump(SimpleNineGridActivity.class);
             }
         });
 
@@ -95,13 +94,14 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn_gv_complex).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showToast("等待实现 复杂九宫格");
+                jump(NewsActivity.class);
             }
         });
     }
 
 
-
+    private static final int QR_REQ_COED_ZXING = 262;
+    private static final int QR_REQ_COED_ZBAR = 263;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

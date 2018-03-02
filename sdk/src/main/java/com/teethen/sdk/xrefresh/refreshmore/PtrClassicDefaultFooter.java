@@ -1,4 +1,4 @@
-package com.teethen.sdk.Refreshmore;
+package com.teethen.sdk.xrefresh.refreshmore;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.teethen.sdk.R;
-import com.teethen.sdk.Refreshmore.indicator.PtrIndicator;
+import com.teethen.sdk.xrefresh.refreshmore.indicator.PtrIndicator;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.teethen.sdk.Refreshmore.util;
+package com.teethen.sdk.xrefresh.refreshmore.util;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

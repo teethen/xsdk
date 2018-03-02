@@ -1,4 +1,4 @@
-package com.teethen.sdk.Refreshmore.header;
+package com.teethen.sdk.xrefresh.refreshmore.header;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,10 +8,10 @@ import android.graphics.PointF;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Transformation;
-import com.teethen.sdk.Refreshmore.PtrFrameLayout;
-import com.teethen.sdk.Refreshmore.PtrUIHandler;
-import com.teethen.sdk.Refreshmore.indicator.PtrIndicator;
-import com.teethen.sdk.Refreshmore.util.PtrLocalDisplay;
+import com.teethen.sdk.xrefresh.refreshmore.PtrFrameLayout;
+import com.teethen.sdk.xrefresh.refreshmore.PtrUIHandler;
+import com.teethen.sdk.xrefresh.refreshmore.indicator.PtrIndicator;
+import com.teethen.sdk.xrefresh.refreshmore.util.PtrLocalDisplay;
 
 import java.util.ArrayList;
 

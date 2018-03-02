@@ -1,8 +1,9 @@
-package com.teethen.xsdk;
+package com.teethen.xsdk.activity;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
@@ -24,6 +25,11 @@ import com.teethen.sdk.R;
 import com.teethen.sdk.base.XConstant;
 import com.teethen.sdk.xutil.SharedPreferencesUtil;
 import com.teethen.sdk.xutil.ToastUtil;
+import com.teethen.xsdk.ActivityCollector;
+import com.teethen.xsdk.App;
+import com.teethen.xsdk.SpKeys;
+
+import butterknife.ButterKnife;
 
 /**
  * Created by xingq on 2018/2/6.
@@ -38,11 +44,13 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setFontSizeTheme();
+        ActivityCollector.addActivity(this);
     }
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
+        ButterKnife.bind(this);
     }
 
     @Override
@@ -65,6 +73,12 @@ public class BaseActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
+    }
+
     public void initToolBar(int toolbarId, String title, boolean... homeAsUpEnabled) {
         Toolbar toolbar = (Toolbar) findViewById(toolbarId);
         initToolBar(toolbar, title, homeAsUpEnabled);
@@ -81,6 +95,19 @@ public class BaseActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(homeAsUp);
         }
     }
+
+    public void jump(Intent intent) {
+        startActivity(intent);
+    }
+    /**
+     * 跳转到指定的活动
+     * @param clazz
+     */
+    public void jump(Class clazz) {
+        Intent intent = new Intent(this, clazz);
+        startActivity(intent);
+    }
+
 
     /**
      * 弹出 指定位置的 Toast

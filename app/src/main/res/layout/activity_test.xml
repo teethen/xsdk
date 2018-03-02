@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.teethen.xsdk.activity.MainActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin5">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+                <Button android:id="@+id/btn_font_size" android:text="FontSize" android:textAllCaps="false" />
+                <Button android:id="@+id/btn_pdf_viewer" android:text="PdfViewer" android:textAllCaps="false" />
+            </TableRow>
+
+            <TableRow>
+                <Button android:id="@+id/btn_qr_zxing" android:text="zxing" android:textAllCaps="false" />
+                <Button android:id="@+id/btn_qr_zbar" android:text="zbar" android:textAllCaps="false" />
+            </TableRow>
+
+            <TableRow>
+                <Button android:id="@+id/btn_pv_single" android:text="Single PhotoView" android:textAllCaps="false" />
+                <Button android:id="@+id/btn_pv_multiple" android:text="Multiple PhotoView" android:textAllCaps="false" />
+            </TableRow>
+
+            <TableRow>
+                <Button android:id="@+id/btn_gv_liteview" android:text="Simple GridView" android:textAllCaps="false" />
+                <Button android:id="@+id/btn_gv_complex" android:text="Complex GridView" android:textAllCaps="false" />
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>

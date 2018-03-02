@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 
 import com.teethen.sdk.xhttp.okgo.cache.CacheEntity;
-import com.teethen.sdk.xhttp.okgo.db.DBHelper;
 
 import java.util.List;
 

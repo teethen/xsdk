@@ -33,6 +33,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(path: ':sdk')
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation rootProject.ext.dependencies.design
     implementation rootProject.ext.dependencies.appcompat_v7
     implementation rootProject.ext.dependencies.cardview_v7
@@ -41,10 +42,12 @@ dependencies {
     implementation rootProject.ext.dependencies.support_annotations
     implementation rootProject.ext.dependencies.support_vector_drawable
     implementation rootProject.ext.dependencies.customtabs
-    implementation rootProject.ext.dependencies.constraint_layout
     implementation rootProject.ext.dependencies.glide
+    implementation rootProject.ext.dependencies.picasso
     implementation rootProject.ext.dependencies.okhttp
     implementation rootProject.ext.dependencies.okio
     implementation rootProject.ext.dependencies.pdfviewer
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation rootProject.ext.dependencies.butterknife
+    annotationProcessor rootProject.ext.dependencies.butterknife_processor
+    implementation rootProject.ext.dependencies.gson
 }
