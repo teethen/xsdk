@@ -16,7 +16,24 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:stretchColumns="2"
+            android:shrinkColumns="2">
+
+            <TableRow>
+                <Button android:id="@+id/btn_dviceid" android:text="Device Id"/>
+                <Button android:id="@+id/btn_apkid" android:text="APK Install Id"/>
+            </TableRow>
+
+            <TableRow>
+                <Button android:id="@+id/btn_dlg_frag1" android:text="浮层1"/>
+                <Button android:id="@+id/btn_dlg_frag2" android:text="浮层2"/>
+            </TableRow>
+
+            <TableRow>
+                <Button android:id="@+id/btn_dlg_prompt1" android:text="彩色对话框1"/>
+                <Button android:id="@+id/btn_dlg_prompt2" android:text="彩色对话框2"/>
+            </TableRow>
 
             <TableRow>
                 <Button android:id="@+id/btn_font_size" android:text="FontSize" android:textAllCaps="false" />

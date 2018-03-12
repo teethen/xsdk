@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:wheel="http://schemas.android.com/apk/res-auto"
     android:id="@+id/loading"
-    android:layout_width="300dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:gravity="center"
@@ -67,7 +67,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/btnPositive"
+            android:id="@+id/btnNegative"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -93,7 +93,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/btnNegative"
+            android:id="@+id/btnPositive"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

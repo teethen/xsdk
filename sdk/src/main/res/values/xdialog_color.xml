@@ -2,8 +2,7 @@
 <resources>
     <!--colordialog begin-->
     <color name="color_dialog_gray">#ededf3</color>
-    <!--<color name="color_dialog_content">#ed7861</color>-->
-    <color name="color_dialog_content">#ffffff</color>
+    <color name="color_dialog_content">#ed7861</color>
     <color name="color_dialog_title">#303030</color>
     <color name="color_dialog_content_prompt">#343434</color>
     <color name="color_type_info">#79b3e4</color>

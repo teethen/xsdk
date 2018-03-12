@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="30dip"
+    android:background="@drawable/shape_fragmentdialog"
+    android:minWidth="270dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center_horizontal"
+        android:text="标题"
+        android:textColor="#333333"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/dialog_text_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="内容"
+        android:textColor="#686871"
+        android:textSize="16sp"/>
+
+    <View
+        android:id="@+id/horizontal_divider"
+        style="@style/HorizontalDivider" />
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_negative"
+            android:layout_width="0dip"
+            android:layout_height="44dip"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:paddingTop="2dip"
+            android:text="@string/btn_cancel"
+            android:textColor="#8E8E9C"
+            android:textSize="16sp"/>
+
+        <View
+            android:id="@+id/vertical_divider"
+            style="@style/VerticalDivider"/>
+
+        <Button
+            android:id="@+id/btn_positive"
+            android:layout_width="0dip"
+            android:layout_height="44dip"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:paddingTop="2dip"
+            android:text="@string/btn_ok"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+</LinearLayout>

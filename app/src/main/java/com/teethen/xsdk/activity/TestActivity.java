@@ -1,10 +1,19 @@
 package com.teethen.xsdk.activity;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 
+import com.teethen.sdk.callback.Callback;
+import com.teethen.sdk.xdialog.colordialog.PromptDialog;
+import com.teethen.sdk.xdialog.fragdialog.Dialoger;
+import com.teethen.sdk.xutil.ApkUtil;
+import com.teethen.sdk.xutil.DialogUtil;
 import com.teethen.sdk.xwidget.photoview.PhotoViewUtil;
 import com.teethen.sdk.xwidget.zbar.ScanZbarActivity;
 import com.teethen.sdk.xwidget.zxing.ScanZxingActivity;
@@ -27,6 +36,86 @@ public class TestActivity extends BaseActivity {
     }
 
     private void initViews() {
+
+        //APK安装唯一码
+        findViewById(R.id.btn_apkid).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String apkInstallId = ApkUtil.getInstallationId(TestActivity.this);
+                DialogUtil.showPromptDialog(TestActivity.this, false, "提示", "安装号：\n"+apkInstallId,
+                        new Dialoger.OnPositiveListener() {
+                            @Override
+                            public void onPositive(Dialog dialog) {
+                                dialog.dismiss();
+                            }
+                        });
+            }
+        });
+        //设备号
+        findViewById(R.id.btn_dviceid).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String deviceId = ApkUtil.getCombineDeviceId();
+                DialogUtil.showPromptDialog(TestActivity.this, false, "提示", "设备号：\n"+deviceId,
+                        new Dialoger.OnPositiveListener() {
+                            @Override
+                            public void onPositive(Dialog dialog) {
+                                dialog.dismiss();
+                            }
+                        });
+            }
+        });
+
+        //对话框 浮层1
+        findViewById(R.id.btn_dlg_frag1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogUtil.showPromptDialog(TestActivity.this, false, "提示", "欢迎使用DialogFragment浮层对话框，好使",
+                        new Dialoger.OnPositiveListener() {
+                            @Override
+                            public void onPositive(Dialog dialog) {
+                                dialog.dismiss();
+                                showToast(TestActivity.class.getSimpleName());
+                            }
+                        });
+            }
+        });
+        //对话框 浮层2
+        findViewById(R.id.btn_dlg_frag2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogUtil.showPromptDialog(TestActivity.this, false, "提示", "欢迎使用DialogFragment浮层对话框 简单实用",
+                        0,0,Color.RED,Color.BLUE,"拒绝","同意",
+                        new Dialoger.OnPositiveListener() {
+                            @Override
+                            public void onPositive(Dialog dialog) {
+                                dialog.dismiss();
+                                showToast("点击确定");
+                            }
+                });
+            }
+        });
+        //对话框 LOGO弹出框
+        findViewById(R.id.btn_dlg_prompt1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogUtil.showPromptDialog(TestActivity.this,"提示","操作失败", PromptDialog.DIALOG_TYPE_WRONG, null, null);
+            }
+        });
+        //对话框 彩色框
+        findViewById(R.id.btn_dlg_prompt2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogUtil.showColorDialog(TestActivity.this, "提示", "这是一个 ColorDialog", null, null,
+                        false, new Callback() {
+                            @Override
+                            public void callback() {
+                                showToast("点击了确定");
+                            }
+                        });
+            }
+        });
+
 
         //字体大小
         findViewById(R.id.btn_font_size).setOnClickListener(new View.OnClickListener() {

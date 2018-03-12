@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.teethen.sdk.xwidget.ninegrid.photoview.PhotoView
+    <com.teethen.sdk.xwidget.photoview.widget.PhotoView
         android:id="@+id/pv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
