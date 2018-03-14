@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Environment;
+import android.text.TextUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +15,12 @@ import com.teethen.sdk.R;
 
 public class Utils {
 
-    public static String FILE_PROVIDER = "com.teethen.sdk.media.fileProvider"; //注意：要与com.teethen.sdk.syncombat清单文件中的保持一致(包括大小写)
+    //public static String FILE_PROVIDER = "com.teethen.sdk.media.fileProvider"; //注意：要与com.teethen.sdk.syncombat清单文件中的保持一致(包括大小写)
+    public static String FILE_PROVIDER = "com.teethen.sdk.fileProvider"; //注意：要与com.teethen.sdk.syncombat清单文件中的保持一致(包括大小写)
+
+    public static void getFileProvider(Activity activity) {
+        FILE_PROVIDER = activity.getApplication().getPackageName() + ".fileProvider";
+    }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static int getActionbarHeight(Activity activity) {

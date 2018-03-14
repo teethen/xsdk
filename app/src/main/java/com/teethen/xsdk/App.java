@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.teethen.sdk.base.XConstant;
+import com.teethen.sdk.xdialog.dialogui.DialogUIUtils;
 import com.teethen.sdk.xhttp.okgo.OkHttp;
 import com.teethen.sdk.xutil.SharedPreferencesUtil;
 import com.teethen.sdk.xwidget.ninegrid.complex.NineGridView;
@@ -25,7 +26,7 @@ public class App extends Application {
 
         mContext = getApplicationContext();
         sp = SharedPreferencesUtil.getInstance(mContext, XConstant.SHARED_PREF_CFG);
-
+        DialogUIUtils.init(mContext);
         initOkHttp();
         initImageLoader();
     }

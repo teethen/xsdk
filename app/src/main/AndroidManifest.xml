@@ -3,9 +3,13 @@
     package="com.teethen.xsdk">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -28,6 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.MediaPickerTestActivity" />
+        <activity android:name=".activity.WebViewActivity" />
         <activity android:name=".activity.SettingsFontSizeActivity" />
         <activity android:name=".activity.PdfViewActivity" />
         <activity android:name=".activity.TestActivity" />
@@ -35,7 +41,8 @@
         <activity android:name=".activity.BottomNavigationViewPagerActivity" />
         <activity android:name=".ninegrid.complex.news.NewsActivity" />
         <activity android:name=".ninegrid.complex.news.NewsLinkActivity" />
-        <activity android:name=".ninegrid.simple.SimpleNineGridActivity"></activity>
+        <activity android:name=".ninegrid.simple.SimpleNineGridActivity" />
+
     </application>
 
 </manifest>

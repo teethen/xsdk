@@ -14,4 +14,11 @@
     <string name="auto_hide_badge">Auto hide badge</string>
     <string name="toggle_hide">Toggle Hide</string>
     <string name="toggle_badge">Toggle Badge</string>
+
+    <string name="error_no_browser">未在当前设备上找到浏览器</string>
+    <string name="action_font_size">字号</string>
+    <string name="action_webview_small_font">字号（小）</string>
+    <string name="action_webview_normal_font">字号（正常）</string>
+    <string name="action_webview_medium_font">字号（中）</string>
+    <string name="action_webview_large_font">字号（大）</string>
 </resources>

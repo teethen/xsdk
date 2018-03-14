@@ -18,9 +18,13 @@ import com.bumptech.glide.Glide;
 import com.teethen.sdk.xmediapicker.MediaItem;
 import com.teethen.sdk.xmediapicker.MediaOptions;
 import com.teethen.sdk.xmediapicker.activities.MediaPickerActivity;
+import com.teethen.sdk.xutil.FileIntentUtil;
 import com.teethen.sdk.xutil.FileUtil;
 import com.teethen.sdk.xutil.ToastUtil;
+import com.teethen.xsdk.App;
 import com.teethen.xsdk.R;
+import com.teethen.xsdk.activity.WebViewActivity;
+import com.teethen.xsdk.common.Tags;
 
 import java.io.File;
 import java.util.List;
@@ -65,13 +69,13 @@ public class DocUtil {
             params.topMargin = 5;
             mediaLinearLayout.addView(root, params);
 
-            /*imageView.setOnClickListener(new View.OnClickListener() {
+            imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   Intent intent = FileIntentUtil.getFileIntent(originalPath);
+                   Intent intent = FileIntentUtil.getFileIntent(context.getApplicationContext(), originalPath);
                    context.startActivity(intent);
                 }
-            });*/
+            });
 
             deleteIv.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -124,7 +128,7 @@ public class DocUtil {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         //intent.setType("*/*");
         intent.setType("application/*;text/*;audio/*");
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.addCategory(Intent.CATEGORY_DEFAULT);//CATEGORY_OPENABLE
         try {
             //context.startActivityForResult(intent, REQUEST_CODE_FILES);
             context.startActivityForResult(Intent.createChooser(intent, "选择文件"), REQUEST_CODE_FILES);
@@ -206,23 +210,25 @@ public class DocUtil {
             switch (fileItem.getType()) {
                 case "doc":
                 case "docx":
-                    Glide.with(context).load("W").into(imageView);
+                    Glide.with(context).load(R.drawable.ic_doc_word).into(imageView);
                     break;
                 case "xls":
                 case "xlsx":
-                    Glide.with(context).load("E").into(imageView);
+                    Glide.with(context).load(R.drawable.ic_doc_excel).into(imageView);
                     break;
                 case "ppt":
                 case "pptx":
-                    Glide.with(context).load("P").into(imageView);
+                    Glide.with(context).load(R.drawable.ic_doc_ppt).into(imageView);
                     break;
                 case "pdf":
                     Glide.with(context).load("PDF").into(imageView);
                     break;
                 case "log":
                 case "txt":
+                case "ini":
                 case "json":
-                    Glide.with(context).load("TXT").into(imageView);
+                case "config":
+                    Glide.with(context).load(R.drawable.ic_doc_file).into(imageView);
                     break;
                 case "jpg":
                 case "jpeg":
@@ -242,19 +248,24 @@ public class DocUtil {
             params.topMargin = 5;
             fileLinearLayout.addView(item, params);
 
-            /*imageView.setOnClickListener(new View.OnClickListener() {
+            imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if ("doc,docx,xls,xlsx,ppt,pptx".indexOf(fileItem.getType()) > -1) {
-                        Intent intent = new Intent(context, WebViewActivity.class);
-                        intent.putExtra(WebViewActivity.WEB_VIEW_URL, fileItem.getOriginalPath());
-                        context.startActivity(intent);
+                    Intent intent = null;
+                    /*if ("doc,docx,xls,xlsx,ppt,pptx".indexOf(fileItem.getType()) > -1) {
+                        intent = new Intent(context, WebViewActivity.class);
+                        intent.putExtra(Tags.WEBVIEW_URL, fileItem.getOriginalPath());
                     } else {
-                        Intent intent = FileIntentUtil.getFileIntent(fileItem.getOriginalPath());
+                        intent = FileIntentUtil.getFileIntent(App.getAppContext(), fileItem.getOriginalPath());
+                    }*/
+                    intent = FileIntentUtil.getFileIntent(App.getAppContext(), fileItem.getOriginalPath());
+                    try {
                         context.startActivity(intent);
+                    } catch (Exception e) {
+                        ToastUtil.showToast(context, e.getMessage());
                     }
                 }
-            });*/
+            });
 
             deleteIv.setOnClickListener(new View.OnClickListener() {
                 @Override

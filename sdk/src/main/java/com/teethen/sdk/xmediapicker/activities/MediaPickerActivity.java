@@ -160,18 +160,17 @@ public class MediaPickerActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TODO: not support change orientation right now (because out of
-        // memory when crop image and change orientation, must check third party
-        // to crop image again).
+        // memory when crop image and change orientation, must check third party to crop image again).
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_mediapicker);
+        Utils.getFileProvider(this);
         if (savedInstanceState != null) {
             mMediaOptions = savedInstanceState.getParcelable(EXTRA_MEDIA_OPTIONS);
             mPhotoFileCapture = (File) savedInstanceState.getSerializable(KEY_PHOTOFILE_CAPTURE);
         } else {
             mMediaOptions = getIntent().getParcelableExtra(EXTRA_MEDIA_OPTIONS);
             if (mMediaOptions == null) {
-                throw new IllegalArgumentException(
-                        "MediaOptions must be not null, you should use MediaPickerActivity.open(Activity activity, int requestCode,MediaOptions options) method instead.");
+                throw new IllegalArgumentException("MediaOptions must be not null, you should use MediaPickerActivity.open(Activity activity, int requestCode,MediaOptions options) method instead.");
             }
         }
         if (getActivePage() == null) {

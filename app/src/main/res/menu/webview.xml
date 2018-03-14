@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_webview_share"
+        android:orderInCategory="100"
+        android:title="@string/action_share"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_share_white"/>
+    <group>
+        <item
+            android:id="@+id/action_webview_small_font"
+            android:title="@string/action_webview_small_font"
+            app:showAsAction="never"
+            android:icon="@drawable/ic_text_format"/>
+        <item
+            android:id="@+id/action_webview_normal_font"
+            android:title="@string/action_webview_normal_font"
+            app:showAsAction="never"
+            android:icon="@drawable/ic_text_format"/>
+        <item
+            android:id="@+id/action_webview_medium_font"
+            android:title="@string/action_webview_medium_font"
+            app:showAsAction="never"
+            android:icon="@drawable/ic_text_format"/>
+        <item
+            android:id="@+id/action_webview_large_font"
+            android:title="@string/action_webview_large_font"
+            app:showAsAction="never"
+            android:icon="@drawable/ic_text_format"/>
+    </group>
+</menu>

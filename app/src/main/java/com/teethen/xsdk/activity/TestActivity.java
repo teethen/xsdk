@@ -3,17 +3,18 @@ package com.teethen.xsdk.activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
+import android.location.Location;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 
 import com.teethen.sdk.callback.Callback;
 import com.teethen.sdk.xdialog.colordialog.PromptDialog;
 import com.teethen.sdk.xdialog.fragdialog.Dialoger;
+import com.teethen.sdk.xupdater.XUpdater;
 import com.teethen.sdk.xutil.ApkUtil;
 import com.teethen.sdk.xutil.DialogUtil;
+import com.teethen.sdk.xlocation.LocationUtil;
 import com.teethen.sdk.xwidget.photoview.PhotoViewUtil;
 import com.teethen.sdk.xwidget.zbar.ScanZbarActivity;
 import com.teethen.sdk.xwidget.zxing.ScanZxingActivity;
@@ -26,6 +27,8 @@ import java.util.List;
 
 public class TestActivity extends BaseActivity {
 
+    private static final String TAG = TestActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +40,27 @@ public class TestActivity extends BaseActivity {
 
     private void initViews() {
 
-        //APK安装唯一码
-        findViewById(R.id.btn_apkid).setOnClickListener(new View.OnClickListener() {
+        //MediaPicker
+        findViewById(R.id.btn_media_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String apkInstallId = ApkUtil.getInstallationId(TestActivity.this);
-                DialogUtil.showPromptDialog(TestActivity.this, false, "提示", "安装号：\n"+apkInstallId,
+                jump(MediaPickerTestActivity.class);
+            }
+        });
+
+        //当前经纬度
+        findViewById(R.id.btn_lonlat).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String jwd = "";
+                Location location = LocationUtil.getLocation(TestActivity.this);
+                if (location != null) {
+                    jwd = LocationUtil.getLongitudeLatitude(location);
+                } else {
+                    jwd = "location is null";
+                }
+
+                DialogUtil.showPromptDialog(TestActivity.this, false, "提示", "当前位置：\n"+jwd,
                         new Dialoger.OnPositiveListener() {
                             @Override
                             public void onPositive(Dialog dialog) {
@@ -51,12 +69,37 @@ public class TestActivity extends BaseActivity {
                         });
             }
         });
+        //检查新版本
+        findViewById(R.id.btn_updater).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String API_TOKEN = "3c57fb226edf7facf821501e4eba08d2";
+                String APP_ID = "5a89af10548b7a760110c918";
+                String url = "http://192.168.3.112:8081/api/app";
+                new XUpdater(TestActivity.this, API_TOKEN, APP_ID).checkVersion(url);
+            }
+        });
+
         //设备号
         findViewById(R.id.btn_dviceid).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String deviceId = ApkUtil.getCombineDeviceId();
                 DialogUtil.showPromptDialog(TestActivity.this, false, "提示", "设备号：\n"+deviceId,
+                        new Dialoger.OnPositiveListener() {
+                            @Override
+                            public void onPositive(Dialog dialog) {
+                                dialog.dismiss();
+                            }
+                        });
+            }
+        });
+        //APK安装唯一码
+        findViewById(R.id.btn_apkid).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String apkInstallId = ApkUtil.getInstallationId(TestActivity.this);
+                DialogUtil.showPromptDialog(TestActivity.this, false, "提示", "安装号：\n"+apkInstallId,
                         new Dialoger.OnPositiveListener() {
                             @Override
                             public void onPositive(Dialog dialog) {

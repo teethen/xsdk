@@ -27,7 +27,7 @@ import com.teethen.sdk.xutil.SharedPreferencesUtil;
 import com.teethen.sdk.xutil.ToastUtil;
 import com.teethen.xsdk.ActivityCollector;
 import com.teethen.xsdk.App;
-import com.teethen.xsdk.SpKeys;
+import com.teethen.xsdk.common.SpKeys;
 
 import butterknife.ButterKnife;
 

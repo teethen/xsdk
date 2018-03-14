@@ -9,6 +9,7 @@
     <string name="pdf_pick_file">Pick file</string>
     <string name="pdf_pick_file_error">Unable to pick file. Check status of file manager.</string>
 
+    <string name="action_share">分享</string>
     <string name="action_flashlight">打开/关闭 闪光灯</string>
     <string name="action_flashlight_on">打开闪光灯</string>
     <string name="action_flashlight_off">关闭闪光灯</string>

@@ -10,7 +10,7 @@ import com.teethen.sdk.base.XConstant;
 import com.teethen.sdk.xutil.ControlUtil;
 import com.teethen.sdk.xwidget.seekbar.RangeSeekBar;
 import com.teethen.xsdk.R;
-import com.teethen.xsdk.SpKeys;
+import com.teethen.xsdk.common.SpKeys;
 
 public class SettingsFontSizeActivity extends BaseActivity {
     private final String TAG = "SettingsFontSize";

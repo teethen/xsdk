@@ -21,6 +21,15 @@
             android:shrinkColumns="2">
 
             <TableRow>
+                <Button android:id="@+id/btn_media_test" android:text="MediaPickerTest" />
+            </TableRow>
+
+            <TableRow>
+                <Button android:id="@+id/btn_lonlat" android:text="当前经纬度"/>
+                <Button android:id="@+id/btn_updater" android:text="检查更新"/>
+            </TableRow>
+
+            <TableRow>
                 <Button android:id="@+id/btn_dviceid" android:text="Device Id"/>
                 <Button android:id="@+id/btn_apkid" android:text="APK Install Id"/>
             </TableRow>
