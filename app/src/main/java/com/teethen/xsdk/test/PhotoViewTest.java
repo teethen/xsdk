@@ -19,6 +19,7 @@ public class PhotoViewTest {
         String[] urlArr = new String[]{
                 "http://img6.bdstatic.com/img/image/pcindex/shitu_b01.jpg",
                 "http://img6.bdstatic.com/img/image/pcindex/shitu_b02.jpg",
+                "http://img6.bdstatic.com/img/image/pcindex/shitu_b03.jpg",
                 "http://img6.bdstatic.com/img/image/pcindex/shitu_b04.jpg",
                 "http://img6.bdstatic.com/img/image/pcindex/shitu_b05.jpg",
                 "http://img6.bdstatic.com/img/image/pcindex/shitu_w01.jpg",

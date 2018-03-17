@@ -25,11 +25,19 @@ import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 import com.shockwave.pdfium.PdfDocument;
 import com.teethen.sdk.base.XConstant;
+import com.teethen.sdk.xhttp.okgo.OkHttp;
 import com.teethen.sdk.xutil.FileUtil;
+import com.teethen.sdk.xutil.ThreadUtil;
 import com.teethen.xsdk.R;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Method;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
+
+import okhttp3.OkHttpClient;
 
 /**
  * 如果引用，会造成安装包大13MB左右，根据项目实际情况使用。
@@ -38,7 +46,11 @@ public class PdfViewActivity extends BaseActivity implements OnPageChangeListene
 
     private static final String TAG = PdfViewActivity.class.getSimpleName();
 
-    //public static final String PDF_SRC_TYPE = "";
+    public static final int PDF_TYPE_ASSETS = 0;
+    public static final int PDF_TYPE_URI = 1;
+    public static final int PDF_TYPE_ONLINE = 2;
+
+    public static final String PDF_SRC_TYPE = "pdf_src_type";
     public static final String PDF_SRC_FILEPATH = "pdf_src_filepath";
     public static final String PDF_SRC_FILENAME = "pdf_src_filename";
 
@@ -51,6 +63,7 @@ public class PdfViewActivity extends BaseActivity implements OnPageChangeListene
 
     private Toolbar toolbar;
     private PDFView pdfView;
+    private int pdfType; //0 sample文件，1本地文件，2在线文件
     private Uri uri;
     private String pdfFilePath;
     private String pdfFileName;
@@ -71,8 +84,10 @@ public class PdfViewActivity extends BaseActivity implements OnPageChangeListene
 
     private void initView() {
         pdfView = (PDFView) findViewById(R.id.pdfView);
+        pdfType = getIntent().getIntExtra(PDF_SRC_TYPE, 0);
         pdfFilePath = getIntent().getStringExtra(PDF_SRC_FILEPATH);
         pdfFileName = getIntent().getStringExtra(PDF_SRC_FILENAME);
+
         if (!TextUtils.isEmpty(pdfFilePath)) {
             uri = Uri.parse(XConstant.SCHEME_FILE + URI_SUFFIX + pdfFilePath);
         }
@@ -96,7 +111,8 @@ public class PdfViewActivity extends BaseActivity implements OnPageChangeListene
                 }
             }
         }
-        return super.onPrepareOptionsPanel(view, menu);
+        //return super.onPrepareOptionsPanel(view, menu);
+        return true;
     }
 
     @Override
@@ -138,11 +154,21 @@ public class PdfViewActivity extends BaseActivity implements OnPageChangeListene
             }
         }
 
-        if (uri != null) {
-            displayFromUri(uri);
+        if (pdfType > PDF_TYPE_ASSETS) {
+            if (TextUtils.isEmpty(pdfFileName)) {
+                pdfFileName = getFileName(uri);
+            }
+
+            if (pdfType == PDF_TYPE_URI && uri != null) {
+                displayFromUri(uri);
+            } else if (pdfType == PDF_TYPE_ONLINE) {
+                displayFromInputStream(pdfFilePath);
+            }
         } else {
+            pdfFileName = SAMPLE_FILE;
             displayFromAsset(SAMPLE_FILE);
         }
+
         setTitle(pdfFileName);
     }
 
@@ -153,7 +179,6 @@ public class PdfViewActivity extends BaseActivity implements OnPageChangeListene
     }
 
     private void displayFromAsset(String assetFileName) {
-        pdfFileName = assetFileName;
         pdfView.fromAsset(SAMPLE_FILE)
                 .defaultPage(pageNumber)
                 .onPageChange(this)
@@ -165,18 +190,51 @@ public class PdfViewActivity extends BaseActivity implements OnPageChangeListene
     }
 
     private void displayFromUri(Uri uri) {
-        if (TextUtils.isEmpty(pdfFileName)) {
-            pdfFileName = getFileName(uri);
+        try {
+            pdfView.fromUri(uri)
+                    .defaultPage(pageNumber)
+                    .onPageChange(this)
+                    .enableAnnotationRendering(true)
+                    .onLoad(this)
+                    .scrollHandle(new DefaultScrollHandle(this))
+                    .spacing(10) // in dp
+                    .load();
+        } catch (Exception e) {
+            showToast(e.toString());
         }
+    }
 
-        pdfView.fromUri(uri)
-                .defaultPage(pageNumber)
-                .onPageChange(this)
-                .enableAnnotationRendering(true)
-                .onLoad(this)
-                .scrollHandle(new DefaultScrollHandle(this))
-                .spacing(10) // in dp
-                .load();
+    private void displayFromInputStream(String pdfUrl) {
+
+        ThreadUtil.execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    URL url = new URL(pdfUrl);
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("GET");
+                    connection.setDoInput(true);
+                    connection.setConnectTimeout(10000);
+                    connection.setReadTimeout(10000);
+                    connection.connect();
+                    int code = connection.getResponseCode();
+                    if (code == 200) {
+                        InputStream stream = connection.getInputStream();
+                        if (stream != null) {
+                            pdfView.fromStream(stream).defaultPage(pageNumber)
+                                    .onPageChange(PdfViewActivity.this)
+                                    .enableAnnotationRendering(true)
+                                    .onLoad(PdfViewActivity.this)
+                                    .scrollHandle(new DefaultScrollHandle(PdfViewActivity.this))
+                                    .spacing(10)
+                                    .load();
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     @Override
@@ -213,6 +271,11 @@ public class PdfViewActivity extends BaseActivity implements OnPageChangeListene
         if (result == null) {
             result = uri.getLastPathSegment();
         }
+
+        if (!TextUtils.isEmpty(result) && result.endsWith(MIME_PDF_EXT)) {
+            result.replace(MIME_PDF_EXT, "");
+        }
+
         return result;
     }
 

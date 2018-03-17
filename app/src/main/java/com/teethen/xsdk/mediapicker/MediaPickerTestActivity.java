@@ -1,4 +1,4 @@
-package com.teethen.xsdk.activity;
+package com.teethen.xsdk.mediapicker;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,8 +13,7 @@ import com.teethen.sdk.xdialog.dialogui.listener.DialogUIItemListener;
 import com.teethen.sdk.xmediapicker.MediaItem;
 import com.teethen.sdk.xmediapicker.activities.MediaPickerActivity;
 import com.teethen.xsdk.R;
-import com.teethen.xsdk.mediapicker.DocUtil;
-import com.teethen.xsdk.mediapicker.FileItem;
+import com.teethen.xsdk.activity.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;

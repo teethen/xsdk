@@ -43,11 +43,12 @@ dependencies {
     implementation rootProject.ext.dependencies.support_vector_drawable
     implementation rootProject.ext.dependencies.customtabs
     implementation rootProject.ext.dependencies.glide
+    implementation rootProject.ext.dependencies.gson
     implementation rootProject.ext.dependencies.picasso
     implementation rootProject.ext.dependencies.okhttp
     implementation rootProject.ext.dependencies.okio
     implementation rootProject.ext.dependencies.pdfviewer
     implementation rootProject.ext.dependencies.butterknife
     annotationProcessor rootProject.ext.dependencies.butterknife_processor
-    implementation rootProject.ext.dependencies.gson
+    implementation rootProject.ext.dependencies.zhihu
 }

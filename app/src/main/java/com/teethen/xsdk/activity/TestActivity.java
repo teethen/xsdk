@@ -19,8 +19,12 @@ import com.teethen.sdk.xwidget.photoview.PhotoViewUtil;
 import com.teethen.sdk.xwidget.zbar.ScanZbarActivity;
 import com.teethen.sdk.xwidget.zxing.ScanZxingActivity;
 import com.teethen.xsdk.R;
+import com.teethen.xsdk.mediapicker.MediaPickerTestActivity;
 import com.teethen.xsdk.ninegrid.complex.news.NewsActivity;
 import com.teethen.xsdk.ninegrid.simple.SimpleNineGridActivity;
+import com.teethen.xsdk.recyvlergroup.WeChatMeActivity;
+import com.teethen.xsdk.recyvlergroup.WeChatNewMsgActivity;
+import com.teethen.xsdk.stepview.StepViewActivity;
 import com.teethen.xsdk.test.PhotoViewTest;
 
 import java.util.List;
@@ -40,6 +44,28 @@ public class TestActivity extends BaseActivity {
 
     private void initViews() {
 
+        //Banner
+        findViewById(R.id.btn_banner).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jump(BannerActivity.class);
+            }
+        });
+        //StepView
+        findViewById(R.id.btn_stepview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jump(StepViewActivity.class);
+            }
+        });
+
+        //ImagePicker
+        findViewById(R.id.btn_imagepicker).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jump(ImagePickerActivity.class);
+            }
+        });
         //MediaPicker
         findViewById(R.id.btn_media_test).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +101,7 @@ public class TestActivity extends BaseActivity {
             public void onClick(View v) {
                 String API_TOKEN = "3c57fb226edf7facf821501e4eba08d2";
                 String APP_ID = "5a89af10548b7a760110c918";
-                String url = "http://192.168.3.112:8081/api/app";
+                String url = "http://photonxing.com:8084/api/app";
                 new XUpdater(TestActivity.this, API_TOKEN, APP_ID).checkVersion(url);
             }
         });
@@ -174,6 +200,8 @@ public class TestActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TestActivity.this, PdfViewActivity.class);
+                //intent.putExtra(PdfViewActivity.PDF_SRC_TYPE, PdfViewActivity.PDF_TYPE_ONLINE);
+                //intent.putExtra(PdfViewActivity.PDF_SRC_FILEPATH, "http://photonxing.com:8084/download/pdf/AndroidStudio30EssentialsPreview.pdf");
                 startActivity(intent);
             }
         });
@@ -193,6 +221,21 @@ public class TestActivity extends BaseActivity {
             public void onClick(View v) {
                 Intent zbar = new Intent(TestActivity.this, ScanZbarActivity.class);
                 startActivityForResult(zbar, QR_REQ_COED_ZBAR);
+            }
+        });
+
+        //RecyclerViewGroup WechatMe
+        findViewById(R.id.btn_recycler_group_wechat_me).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jump(WeChatMeActivity.class);
+            }
+        });
+        //RecyclerViewGroup WechatNewMsg
+        findViewById(R.id.btn_recycler_group_wechat_newmsg).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jump(WeChatNewMsgActivity.class);
             }
         });
 

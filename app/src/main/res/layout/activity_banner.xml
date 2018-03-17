@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.teethen.xsdk.activity.BannerActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <com.teethen.sdk.xbanner.XBanner
+        android:id="@+id/banner_test"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        app:banner_indicatorGravity="bottom|right"
+        app:banner_pageChangeDuration="1500"
+        app:banner_placeholderDrawable="@drawable/ic_banner_placehoder"
+        app:banner_tipTextSize="12sp"
+        app:banner_transitionEffect="accordion" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:id="@+id/tv_main_enable_auto_play"
+            style="@style/AutoWrapTV"
+            android:text="EnableAutoPlay" />
+        <TextView
+            android:id="@+id/tv_main_disable_auto_play"
+            style="@style/AutoWrapTV"
+            android:text="DisableAutoPlay" />
+        <TextView
+            android:id="@+id/tv_main_start_auto_play"
+            style="@style/AutoWrapTV"
+            android:text="StartAutoPlay" />
+        <TextView
+            android:id="@+id/tv_main_stop_auto_play"
+            style="@style/AutoWrapTV"
+            android:text="StopAutoPlay" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/tv_main_cube"
+            style="@style/AutoWrapTV"
+            android:text="Cube" />
+        <TextView
+            android:id="@+id/tv_main_depth"
+            style="@style/AutoWrapTV"
+            android:text="Depth" />
+        <TextView
+            android:id="@+id/tv_main_flip"
+            style="@style/AutoWrapTV"
+            android:text="Flip" />
+        <TextView
+            android:id="@+id/tv_main_rotate"
+            style="@style/AutoWrapTV"
+            android:text="Rotate" />
+        <TextView
+            android:id="@+id/tv_main_alpha"
+            style="@style/AutoWrapTV"
+            android:text="Alpha" />
+    </LinearLayout>
+
+    <com.teethen.sdk.xbanner.XBanner
+        android:id="@+id/banner_default"
+        style="@style/BannerDefaultStyle"
+        app:banner_indicatorGravity="bottom|right"
+        app:banner_isNeedShowIndicatorOnOnlyOnePage="true"
+        app:banner_isNumberIndicator="true"
+        app:banner_numberIndicatorBackground="@drawable/shape_number_indicator_bg"
+        app:banner_numberIndicatorTextColor="@android:color/white"
+        app:banner_numberIndicatorTextSize="10sp"
+        app:banner_pointAutoPlayAble="true"
+        app:banner_pointContainerBackground="@android:color/transparent"
+        app:banner_transitionEffect="defaultEffect"
+        app:banner_aspectRatio="2.8" />
+
+</LinearLayout>

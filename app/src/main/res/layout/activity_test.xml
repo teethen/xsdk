@@ -9,7 +9,7 @@
 
     <include layout="@layout/toolbar" />
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin5">
@@ -21,7 +21,13 @@
             android:shrinkColumns="2">
 
             <TableRow>
-                <Button android:id="@+id/btn_media_test" android:text="MediaPickerTest" />
+                <Button android:id="@+id/btn_banner" android:text="Banner" />
+                <Button android:id="@+id/btn_stepview" android:text="StepView" />
+            </TableRow>
+
+            <TableRow>
+                <Button android:id="@+id/btn_imagepicker" android:text="ImagePicker" />
+                <Button android:id="@+id/btn_media_test" android:text="MediaPicker" />
             </TableRow>
 
             <TableRow>
@@ -55,6 +61,11 @@
             </TableRow>
 
             <TableRow>
+                <Button android:id="@+id/btn_recycler_group_wechat_me" android:text="RecyclerGroup 1"/>
+                <Button android:id="@+id/btn_recycler_group_wechat_newmsg" android:text="RecyclerGroup 2"/>
+            </TableRow>
+
+            <TableRow>
                 <Button android:id="@+id/btn_pv_single" android:text="Single PhotoView" android:textAllCaps="false" />
                 <Button android:id="@+id/btn_pv_multiple" android:text="Multiple PhotoView" android:textAllCaps="false" />
             </TableRow>
@@ -66,6 +77,6 @@
 
         </TableLayout>
 
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

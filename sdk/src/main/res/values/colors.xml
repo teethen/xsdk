@@ -37,6 +37,7 @@
     <color name="darkGray">#757575</color>
     <color name="lightGray">#BDBDBD</color>
     <color name="lineGray">#DFDFDF</color>
+
     <color name="transparent">#33000000</color>
     <color name="indicator_selected">@android:color/white</color>
     <color name="indicator_unselected">#4D000000</color>

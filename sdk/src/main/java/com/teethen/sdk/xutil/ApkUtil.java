@@ -1,7 +1,10 @@
 package com.teethen.sdk.xutil;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
@@ -17,7 +20,9 @@ import java.util.UUID;
 
 public class ApkUtil {
 
+    private static String deviceId = null;
     private static String apkInstallationId = null;
+    private static PermissionUtil permissionUtil = null;
 
     /**
      * 获取应用程序安装的ID
@@ -54,38 +59,64 @@ public class ApkUtil {
         out.close();
     }
 
+
     public static String getCombineDeviceId() {
+        if (TextUtils.isEmpty(deviceId)) {
+            String combineId = String.valueOf(Build.VERSION.SDK_INT) +
+                    Build.BOARD.length() % 10 +
+                    Build.BRAND.length() % 10 +
+                    Build.CPU_ABI.length() % 10 +
+                    Build.DEVICE.length() % 10 +
+                    Build.DISPLAY.length() % 10 +
+                    Build.HARDWARE.length() % 10 +
+                    Build.HOST.length() % 10 +
+                    Build.ID.length() % 10 +
+                    Build.MANUFACTURER.length() % 10 +
+                    Build.MODEL.length() % 10 +
+                    Build.PRODUCT.length() % 10 +
+                    Build.TAGS.length() % 10 +
+                    Build.TYPE.length() % 10 +
+                    Build.USER.length() % 10;
 
-        String combineId = String.valueOf(Build.VERSION.SDK_INT) +
-                (Build.BOARD.length() % 10) +
-                (Build.BRAND.length() % 10) +
-                (Build.CPU_ABI.length() % 10) +
-                (Build.DEVICE.length() % 10) +
-                (Build.HARDWARE.length() % 10) +
-                (Build.MANUFACTURER.length() % 10) +
-                (Build.MODEL.length() % 10) +
-                (Build.PRODUCT.length() % 10);
+            String serial = null;
+            try {
+                serial = Build.class.getField("SERIAL").get(null).toString();
+            }
+            catch (Exception e) {
+                serial = "com.teethen.xingq";
+            }
 
-        String serial = null;
-        try {
-            serial = Build.class.getField("SERIAL").get(null).toString();
+            deviceId = new UUID(combineId.hashCode(), serial.hashCode()).toString().replace("-","");
         }
-        catch (Exception e) {
-            serial = "com.teethen.xingqx";
-        }
-
-        return new UUID(combineId.hashCode(), serial.hashCode()).toString().replace("-","");
+        return deviceId;
     }
 
 
     public static String getDeviceId(Context context) {
-        String id = "";
-        //need permission read_phone_state
-        try {
-            TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-            id = tm.getDeviceId();
-        } catch (NullPointerException e) {
-        } catch (SecurityException e) {
+        String id = null;
+
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+            try {
+                TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+                id = tm.getDeviceId();
+            } catch (NullPointerException e) {
+            } catch (SecurityException e) {
+            }
+        } else {
+            if (permissionUtil == null) {
+                permissionUtil = new PermissionUtil(context);
+            }
+            permissionUtil.requestPermissions("该功能需要申请读取设备硬件状态的权限", new PermissionUtil.PermissionListener() {
+                @Override
+                public void doAfterGrand(String... permission) {
+                    getDeviceId(context);
+                }
+
+                @Override
+                public void doAfterDenied(String... permission) {
+                    ToastUtil.showToast(context, "未授予本应用读取手机硬件状态的权限");
+                }
+            }, Manifest.permission.READ_PHONE_STATE);
         }
 
         return id;

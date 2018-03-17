@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:stv="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.teethen.sdk.xtextedit.supertextview.SuperTextView
+        android:id="@+id/super_tv_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/supertextview_default"
+        stv:sLeftViewGravity="left_center"
+        stv:sRightViewGravity="right_center"
+        stv:sLeftTopTextString=""
+        stv:sLeftTopTextSize="@dimen/text_size_default"
+        stv:sLeftBottomTextString=""
+        stv:sLeftBottomTextSize="@dimen/text_size14"
+        stv:sLeftBottomTextColor="@color/darkGray"
+        stv:sRightTopTextString=""
+        stv:sRightTopTextSize="@dimen/text_size14"
+        stv:sRightTopTextColor="@color/lightGray"
+        stv:sRightBottomTextString=" "
+        stv:sRightBottomTextSize="@dimen/text_size14"
+        stv:sRightBottomTextColor="@color/lightGray"/>
+        <!--stv:sBottomDividerLineMarginLR="@dimen/margin16"
+        stv:sLeftViewMarginLeft="@dimen/margin16"
+        stv:sRightIconRes="@drawable/ic_arrow_right"-->
+</LinearLayout>

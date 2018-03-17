@@ -22,8 +22,7 @@ import java.util.List;
  *
  * 描述：
  */
-public class VerticalStepView extends LinearLayout implements VerticalStepViewIndicator.OnDrawIndicatorListener
-{
+public class VerticalStepView extends LinearLayout implements VerticalStepViewIndicator.OnDrawIndicatorListener {
     private RelativeLayout mTextContainer;
     private VerticalStepViewIndicator mStepsViewIndicator;
     private List<String> mTexts;
@@ -44,14 +43,12 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
         this(context, attrs, 0);
     }
 
-    public VerticalStepView(Context context, AttributeSet attrs, int defStyleAttr)
-    {
+    public VerticalStepView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
 
-    private void init()
-    {
+    private void init() {
         View rootView = LayoutInflater.from(getContext()).inflate(R.layout.widget_vertical_stepview, this);
         mStepsViewIndicator = (VerticalStepViewIndicator) rootView.findViewById(R.id.steps_indicator);
         mStepsViewIndicator.setOnDrawListener(this);
@@ -59,8 +56,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
     }
 
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
-    {
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
@@ -70,8 +66,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      * @param texts
      * @return
      */
-    public VerticalStepView setStepViewTexts(List<String> texts)
-    {
+    public VerticalStepView setStepViewTexts(List<String> texts){
         mTexts = texts;
         if(texts != null){
             mStepsViewIndicator.setStepNum(mTexts.size());
@@ -87,8 +82,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      * @param complectingPosition
      * @return
      */
-    public VerticalStepView setStepsViewIndicatorComplectingPosition(int complectingPosition)
-    {
+    public VerticalStepView setStepsViewIndicatorComplectingPosition(int complectingPosition){
         mCompletingPosition = complectingPosition;
         mStepsViewIndicator.setComplectingPosition(complectingPosition);
         return this;
@@ -100,8 +94,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      * @param unComplectedTextColor
      * @return
      */
-    public VerticalStepView setStepViewUnComplectedTextColor(int unComplectedTextColor)
-    {
+    public VerticalStepView setStepViewUnComplectedTextColor(int unComplectedTextColor){
         mUnCompletedTextColor = unComplectedTextColor;
         return this;
     }
@@ -112,8 +105,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      * @param complectedTextColor
      * @return
      */
-    public VerticalStepView setStepViewComplectedTextColor(int complectedTextColor)
-    {
+    public VerticalStepView setStepViewComplectedTextColor(int complectedTextColor){
         this.mCompletedTextColor = complectedTextColor;
         return this;
     }
@@ -124,8 +116,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      * @param unCompletedLineColor
      * @return
      */
-    public VerticalStepView setStepsViewIndicatorUnCompletedLineColor(int unCompletedLineColor)
-    {
+    public VerticalStepView setStepsViewIndicatorUnCompletedLineColor(int unCompletedLineColor){
         mStepsViewIndicator.setUnCompletedLineColor(unCompletedLineColor);
         return this;
     }
@@ -136,8 +127,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      * @param completedLineColor
      * @return
      */
-    public VerticalStepView setStepsViewIndicatorCompletedLineColor(int completedLineColor)
-    {
+    public VerticalStepView setStepsViewIndicatorCompletedLineColor(int completedLineColor) {
         mStepsViewIndicator.setCompletedLineColor(completedLineColor);
         return this;
     }
@@ -147,8 +137,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      *
      * @param defaultIcon
      */
-    public VerticalStepView setStepsViewIndicatorDefaultIcon(Drawable defaultIcon)
-    {
+    public VerticalStepView setStepsViewIndicatorDefaultIcon(Drawable defaultIcon){
         mStepsViewIndicator.setDefaultIcon(defaultIcon);
         return this;
     }
@@ -158,8 +147,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      *
      * @param completeIcon
      */
-    public VerticalStepView setStepsViewIndicatorCompleteIcon(Drawable completeIcon)
-    {
+    public VerticalStepView setStepsViewIndicatorCompleteIcon(Drawable completeIcon){
         mStepsViewIndicator.setCompleteIcon(completeIcon);
         return this;
     }
@@ -169,8 +157,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      *
      * @param attentionIcon
      */
-    public VerticalStepView setStepsViewIndicatorAttentionIcon(Drawable attentionIcon)
-    {
+    public VerticalStepView setStepsViewIndicatorAttentionIcon(Drawable attentionIcon) {
         mStepsViewIndicator.setAttentionIcon(attentionIcon);
         return this;
     }
@@ -181,8 +168,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      * @param isReverSe default is true
      * @return
      */
-    public VerticalStepView reverseDraw(boolean isReverSe)
-    {
+    public VerticalStepView reverseDraw(boolean isReverSe){
         this.mStepsViewIndicator.reverseDraw(isReverSe);
         return this;
     }
@@ -193,8 +179,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      * @param linePaddingProportion
      * @return
      */
-    public VerticalStepView setLinePaddingProportion(float linePaddingProportion)
-    {
+    public VerticalStepView setLinePaddingProportion(float linePaddingProportion) {
         this.mStepsViewIndicator.setIndicatorLinePaddingProportion(linePaddingProportion);
         return this;
     }
@@ -206,8 +191,7 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
      * @param textSize
      * @return
      */
-    public VerticalStepView setTextSize(int textSize)
-    {
+    public VerticalStepView setTextSize(int textSize) {
         if(textSize > 0)
         {
             mTextSize = textSize;
@@ -216,28 +200,22 @@ public class VerticalStepView extends LinearLayout implements VerticalStepViewIn
     }
 
     @Override
-    public void ondrawIndicator()
-    {
-        if(mTextContainer != null)
-        {
+    public void ondrawIndicator(){
+        if(mTextContainer != null) {
             mTextContainer.removeAllViews();//clear ViewGroup
             List<Float> complectedXPosition = mStepsViewIndicator.getCircleCenterPointPositionList();
-            if(mTexts != null && complectedXPosition != null && complectedXPosition.size() > 0)
-            {
-                for(int i = 0; i < mTexts.size(); i++)
-                {
+            if(mTexts != null && complectedXPosition != null && complectedXPosition.size() > 0) {
+                for(int i = 0; i < mTexts.size(); i++) {
                     mTextView = new TextView(getContext());
                     mTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, mTextSize);
                     mTextView.setText(mTexts.get(i));
                     mTextView.setY(complectedXPosition.get(i) - mStepsViewIndicator.getCircleRadius() / 2);
                     mTextView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-                    if(i <= mCompletingPosition)
-                    {
+                    if(i <= mCompletingPosition){
                         mTextView.setTypeface(null, Typeface.BOLD);
                         mTextView.setTextColor(mCompletedTextColor);
-                    } else
-                    {
+                    } else {
                         mTextView.setTextColor(mUnCompletedTextColor);
                     }
 

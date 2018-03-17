@@ -104,6 +104,7 @@ public class BaseTextView extends LinearLayout {
      */
     public LayoutParams getParams(LayoutParams params) {
         if (params == null) {
+
             params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         }
         return params;

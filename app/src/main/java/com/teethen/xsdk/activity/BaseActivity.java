@@ -2,19 +2,23 @@ package com.teethen.xsdk.activity;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +28,8 @@ import android.view.WindowManager;
 import com.teethen.sdk.R;
 import com.teethen.sdk.base.XConstant;
 import com.teethen.sdk.xutil.SharedPreferencesUtil;
+import com.teethen.sdk.xutil.StatusBarCompat;
+import com.teethen.sdk.xutil.StatusBarUtil;
 import com.teethen.sdk.xutil.ToastUtil;
 import com.teethen.xsdk.ActivityCollector;
 import com.teethen.xsdk.App;
@@ -94,6 +100,28 @@ public class BaseActivity extends AppCompatActivity {
             }
             getSupportActionBar().setDisplayHomeAsUpEnabled(homeAsUp);
         }
+    }
+
+    protected void initActionBar(int titleId, boolean showHomeAsUp) {
+        setTitle(titleId);
+        ActionBar actionBar = getSupportActionBar();
+        if (null != actionBar) {
+            actionBar.setDisplayHomeAsUpEnabled(showHomeAsUp);
+        }
+    }
+
+    protected View setCustomActionBarLayout(@LayoutRes int layoutId) {
+        ActionBar actionBar = getSupportActionBar();
+        if (null != actionBar) {
+            actionBar.setDisplayShowHomeEnabled(false);
+            actionBar.setDisplayShowCustomEnabled(true);
+            LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View view = inflater.inflate(layoutId, null);
+            ActionBar.LayoutParams layout = new ActionBar.LayoutParams(ActionBar.LayoutParams.FILL_PARENT, ActionBar.LayoutParams.FILL_PARENT);
+            actionBar.setCustomView(view, layout);
+            return view;
+        }
+        return null;
     }
 
     public void jump(Intent intent) {

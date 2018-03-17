@@ -31,7 +31,7 @@
     <dimen name="text_size_large">24sp</dimen>
     <dimen name="text_size_largest">30sp</dimen>
 
-    <dimen name="super_textview_small">50dp</dimen>
-    <dimen name="super_textview_medium">55dp</dimen>
-    <dimen name="super_textview_default">60dp</dimen>
+    <dimen name="supertextview_small">46dp</dimen>
+    <dimen name="supertextview_medium">50dp</dimen>
+    <dimen name="supertextview_default">55dp</dimen>
 </resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".stepview.StepViewActivity">
+
+    <item
+        android:id="@+id/action_stepview_drawcanvas"
+        android:orderInCategory="100"
+        android:title="Draw Canvas"
+        app:showAsAction="withText"/>
+
+    <item
+        android:id="@+id/action_stepview_horizontal"
+        android:orderInCategory="100"
+        android:title="Horizontal Stepview"
+        app:showAsAction="withText"/>
+
+    <item
+        android:id="@+id/action_stepview_vertical_forward"
+        android:orderInCategory="100"
+        android:title="Vertical Stepview Forward"
+        app:showAsAction="withText"/>
+
+    <item
+        android:id="@+id/action_stepview_vertical_reverse"
+        android:orderInCategory="100"
+        android:title="Vertical Stepview Reverse"
+        app:showAsAction="withText"/>
+
+    <item
+        android:id="@+id/action_test_horizontal_stepview"
+        android:orderInCategory="100"
+        android:title="Test Horizontal StepView"
+        app:showAsAction="withText"/>
+
+</menu>
