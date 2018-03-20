@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.teethen.sdk.R;
@@ -57,6 +58,17 @@ public class ControlUtil {
             edit.setCursorVisible(!readonly);                        //设置输入框中的光标不可见
             edit.setFocusable(!readonly);                            //无焦点
             edit.setFocusableInTouchMode(!readonly);                 //触摸时也得不到焦点
+        }
+    }
+
+    //设置TextView Marquee 效果
+    public static void setTextMarquee(TextView textView) {
+        if (textView != null) {
+            textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+            textView.setSingleLine(true);
+            textView.setSelected(true);
+            textView.setFocusable(true);
+            textView.setFocusableInTouchMode(true);
         }
     }
 

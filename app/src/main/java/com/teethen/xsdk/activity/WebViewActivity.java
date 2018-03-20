@@ -2,6 +2,7 @@ package com.teethen.xsdk.activity;
 
 import android.content.ComponentName;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.widget.Toolbar;
@@ -129,6 +130,17 @@ public class WebViewActivity extends BaseActivity {
         settings.setAllowFileAccessFromFileURLs(true);
         settings.setJavaScriptEnabled(true);
         //settings.setJavaScriptCanOpenWindowsAutomatically(true);//javascript能执行自动打开窗口操作
+
+        // >= 19(SDK4.4)启动硬件加速，否则启动软件加速
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            mWebView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+            settings.setLoadsImagesAutomatically(true); //支持自动加载图片
+        } else {
+            mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+            settings.setLoadsImagesAutomatically(false);
+        }
+        mWebView.setOverScrollMode(View.OVER_SCROLL_NEVER);
+        mWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 
         mWebView.setWebChromeClient(new WthWebChrome());
         mWebView.setWebViewClient(new WthWebClient());

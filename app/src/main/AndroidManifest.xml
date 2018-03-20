@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.teethen.xsdk">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -25,6 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".activity.GuideActivity"
             android:screenOrientation="portrait">
@@ -45,6 +47,7 @@
             android:name=".activity.TestActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.BannerActivity" />
+        <activity android:name=".activity.ImagePickerActivity" />
         <activity android:name=".activity.PdfViewActivity" />
         <activity android:name=".activity.SettingsFontSizeActivity" />
         <activity android:name=".activity.WebViewActivity" />
@@ -58,7 +61,7 @@
         <activity android:name=".recyvlergroup.WeChatNewMsgActivity" />
         <activity android:name=".stepview.StepViewActivity" />
         <activity android:name=".stepview.StepViewHorizontalActivity" />
-        <activity android:name=".activity.ImagePickerActivity"></activity>
+        <activity android:name=".marquee.MarqueeActivity" />
     </application>
 
 </manifest>

@@ -20,15 +20,7 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
-        <!--<provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.teethen.sdk.fileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/download" />
-        </provider>-->
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.fileProvider"
@@ -36,8 +28,9 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/download"/>
+                android:resource="@xml/provider_paths"/>
         </provider>
+
         <activity
             android:name="com.teethen.sdk.xupdater.UpPermissionUtil$UpPermissionActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

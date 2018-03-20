@@ -17,6 +17,10 @@
     <color name="background_light">#EBEBEB</color>
     <color name="background_dark">#D6D6D6</color>
 
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#4f000000</color>
+    <color name="half_transparent_white">#80ffffff</color>
+
     <color name="tab_bg">#F3F5F4</color>
     <color name="tab_normal_color">#515051</color>
     <color name="tab_selected_color">#D33D3C</color>

@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.teethen.sdk.xutil.ToastUtil;
 import com.teethen.sdk.xwidget.ninegrid.simple.ItemImageClickListener;
 import com.teethen.sdk.xwidget.ninegrid.simple.ItemImageLongClickListener;
@@ -69,10 +68,10 @@ public class SimpleNineGridAdapter extends RecyclerView.Adapter<SimpleNineGridAd
 
             nineGridView.setAdapter(adapter);
 
-            nineGridView.setItemImageClickListener(new ItemImageClickListener() {
+            nineGridView.setItemImageClickListener(new ItemImageClickListener<String>() {
                 @Override
-                public void onItemImageClick(Context context, ImageView imageView, int index, List list) {
-                    PhotoViewUtil.startViewWithGlide(context, list.get(index).toString());
+                public void onItemImageClick(Context context, ImageView imageView, int index, List<String> list) {
+                    PhotoViewUtil.startViewWithGlide(context, list.get(index));
                     //PhotoViewUtil.startViewPagerWithUrl(context, list);
                 }
             });

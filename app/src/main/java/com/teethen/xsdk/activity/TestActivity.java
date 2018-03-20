@@ -19,6 +19,7 @@ import com.teethen.sdk.xwidget.photoview.PhotoViewUtil;
 import com.teethen.sdk.xwidget.zbar.ScanZbarActivity;
 import com.teethen.sdk.xwidget.zxing.ScanZxingActivity;
 import com.teethen.xsdk.R;
+import com.teethen.xsdk.marquee.MarqueeActivity;
 import com.teethen.xsdk.mediapicker.MediaPickerTestActivity;
 import com.teethen.xsdk.ninegrid.complex.news.NewsActivity;
 import com.teethen.xsdk.ninegrid.simple.SimpleNineGridActivity;
@@ -57,6 +58,11 @@ public class TestActivity extends BaseActivity {
             public void onClick(View v) {
                 jump(StepViewActivity.class);
             }
+        });
+
+        //Marquee 跑马灯
+        findViewById(R.id.btn_marquee).setOnClickListener((view) -> {
+            jump(MarqueeActivity.class);
         });
 
         //ImagePicker

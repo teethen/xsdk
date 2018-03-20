@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.teethen.sdk.xwidget.marquee.MarqueeView
+        android:id="@+id/marqueeView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/blue"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:mvDirection="right_to_left"
+        app:mvAnimDuration="2000"
+        app:mvInterval="5000"
+        app:mvSingleLine="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_oval_half_transparent_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/iv_speaker1"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_loudspeaker"/>
+
+        <com.teethen.sdk.xwidget.marquee.MarqueeView
+            android:id="@+id/marqueeView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/iv_speaker1"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_oval_half_transparent_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/iv_speaker2"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_loudspeaker"/>
+
+        <com.teethen.sdk.xwidget.marquee.MarqueeView
+            android:id="@+id/marqueeView2"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/iv_speaker2"
+            app:mvTextColor="@color/white"
+            app:mvTextSize="14sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_oval_half_transparent_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/iv_speaker3"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_loudspeaker_red"/>
+
+        <com.teethen.sdk.xwidget.marquee.MarqueeView
+            android:id="@+id/marqueeView3"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/iv_speaker3"
+            app:mvDirection="right_to_left"
+            app:mvGravity="left"
+            app:mvTextColor="@color/red"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_oval_half_transparent_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/iv_loudspeaker4"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_loudspeaker_red"/>
+
+        <com.teethen.sdk.xwidget.marquee.MarqueeView
+            android:id="@+id/marqueeView4"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/iv_loudspeaker4"
+            app:mvDirection="left_to_right"
+            app:mvGravity="right"
+            app:mvTextColor="@color/red"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_loudspeaker"/>
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_centerVertical="true"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            android:text="原生TextView的Marquee效果,ellipsize=marquee,focusable=true,singleLine=true,focusableInTouchMode=true,邢庆祥"
+
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:singleLine="true"
+            android:focusableInTouchMode="true"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_loudspeaker"/>
+        <TextView
+            android:id="@+id/tv_test_marquee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="5dp"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:textColor="@color/deepOrange"
+            android:text="Android TextView Marquee,只需设置如下四个属性即可：ellipsize=marquee,singleLine=true,focusable=true,focusableInTouchMode=true 或者通过代码设置实现"/>
+
+    </LinearLayout>
+
+</LinearLayout>

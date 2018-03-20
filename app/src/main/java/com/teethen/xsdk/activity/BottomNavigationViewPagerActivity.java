@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.teethen.sdk.xbottom.navigation.BottomNavigationBar;
 import com.teethen.sdk.xbottom.navigation.BottomNavigationItem;
@@ -18,6 +20,7 @@ import com.teethen.sdk.xbottom.navigation.TextBadgeItem;
 import com.teethen.xsdk.R;
 import com.teethen.xsdk.fragment.FragmentViewPagerAdapter;
 import com.teethen.xsdk.fragment.FragmentText;
+import com.teethen.xsdk.marquee.adapter.FragmentPagerItemAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +52,7 @@ public class BottomNavigationViewPagerActivity extends BaseActivity implements B
         setContentView(R.layout.activity_bottom_navigation_viewpager);
 
         initToolBar(R.id.toolbar, "Bottom Navigation Bar", true);
+
         initBottomNavigationBar();
         initViewPager();//implements ViewPager.OnPageChangeListener
     }
@@ -198,7 +202,9 @@ public class BottomNavigationViewPagerActivity extends BaseActivity implements B
     private ViewPager viewPager;
     private List<Fragment> fragments;
     private void initViewPager() {
+
         viewPager = (ViewPager) findViewById(R.id.bottom_nav_view_pager);
+
         if (fragments == null) {
             fragments = new ArrayList<Fragment>();
         }

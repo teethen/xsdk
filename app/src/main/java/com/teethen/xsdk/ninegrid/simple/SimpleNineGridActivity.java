@@ -32,7 +32,6 @@ public class SimpleNineGridActivity extends BaseActivity {
         SimpleNineGridAdapter adapter = new SimpleNineGridAdapter(this, list);
         LinearLayoutManager layoutManager = LayoutUtil.getLinearLayoutManager(this);
         LayoutUtil.setupRecyclerView(imgRV, layoutManager);
-
         imgRV.setAdapter(adapter);
     }
 

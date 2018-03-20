@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.teethen.xsdk.activity.MainActivity">
+    tools:context="com.teethen.xsdk.activity.TestActivity">
 
     <include layout="@layout/toolbar" />
 
@@ -23,6 +23,10 @@
             <TableRow>
                 <Button android:id="@+id/btn_banner" android:text="Banner" />
                 <Button android:id="@+id/btn_stepview" android:text="StepView" />
+            </TableRow>
+
+            <TableRow>
+                <Button android:id="@+id/btn_marquee" android:text="Marquee 跑马灯"/>
             </TableRow>
 
             <TableRow>

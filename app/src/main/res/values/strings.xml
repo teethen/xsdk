@@ -34,6 +34,11 @@
     <string name="toggle_hide">Toggle Hide</string>
     <string name="toggle_badge">Toggle Badge</string>
 
+    <string name="marquee_text">心中有阳光，脚底有力量。</string>
+    <string name="marquee_texts">心中有阳光，脚底有力量。心中有阳光，脚底有力量。心中有阳光，脚底有力量。心中有阳光，脚底有力量。</string>
+
+    <string name="error_gif">长宽不小于 %1$dpx，且大小不超过 %2$sM。</string>
+
     <string name="error_no_browser">未在当前设备上找到浏览器</string>
     <string name="action_font_size">字号</string>
     <string name="action_webview_small_font">字号（小）</string>

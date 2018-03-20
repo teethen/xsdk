@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,9 +8,48 @@
 
     <include layout="@layout/toolbar" />
 
-    <TextView
-        style="@style/MatchWrap"
-        android:layout_margin="@dimen/margin16"
-        android:text="下周一实现封装" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_zhihu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin16"
+            android:layout_marginRight="@dimen/margin16"
+            android:layout_marginTop="8dp"
+            android:minHeight="56dp"
+            android:text="Zhihu"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:theme="@style/ZhihuOverlay"/>
+
+        <Button
+            android:id="@+id/btn_dracula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_marginLeft="@dimen/margin16"
+            android:layout_marginRight="@dimen/margin16"
+            android:layout_marginTop="16dp"
+            android:minHeight="56dp"
+            android:text="Dracula"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:theme="@style/DraculaOverlay"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_matisse_imglist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3B3B3B"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp" />
 
 </LinearLayout>
