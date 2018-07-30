@@ -27,7 +27,6 @@ public class DataSource {
             {HEADER_NULL_ITEM, new WeChatItem(R.attr.key_setting, R.mipmap.ic_me_setting, R.string.setting, VIEW_TYPE_WECHAT_COMMON, null)}
     };
 
-
     public static WeChatItem NEW_MESSAGE_VOICE = new WeChatItem(R.attr.key_new_message_voice, R.string.new_message_voice, R.string.little_apple, VIEW_TYPE_WECHAT_TEXT, false);
     public static WeChatItem[][] WeChatNewMsgItems = new WeChatItem[][]{
         {HEADER_NULL_ITEM,
@@ -38,7 +37,6 @@ public class DataSource {
                 new WeChatItem(R.attr.key_voice, R.string.voice, 0, VIEW_TYPE_WECHAT_SWITCH, false),
                 new WeChatItem(R.attr.key_vibrant, R.string.vibrant, 0, VIEW_TYPE_WECHAT_SWITCH, false)}
     };
-
 
     public static WeChatItem[][] WeChatItemMsgNotifyItemsHolder = {
             {HEADER_NULL_ITEM, new WeChatItem(R.attr.key_notify_detail, R.string.notify_detail, R.string.notify_detail_subtitle, VIEW_TYPE_WECHAT_SWITCH, false)},

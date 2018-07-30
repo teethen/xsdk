@@ -1,5 +1,6 @@
 package com.teethen.sdk.xutil;
 
+import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
@@ -85,6 +86,21 @@ public class FileUtil {
         final String[] units = new String[]{"B", "KB", "MB", "GB", "TB"};
         int digitGroups = (int) (Math.log10(size) / Math.log10(1024));
         return new DecimalFormat("#,##0.#").format(size / Math.pow(1024, digitGroups)) + " " + units[digitGroups];
+    }
+
+    @SuppressLint("DefaultLocale")
+    public static String getMeasureSize(long byteCount) {
+        if (byteCount <= 0) {
+            return "0B";
+        } else if (byteCount < 1024) {
+            return String.format("%.2fB", (double) byteCount);
+        } else if (byteCount < 1048576) {
+            return String.format("%.2fKB", (double) byteCount / 1024);
+        } else if (byteCount < 1073741824) {
+            return String.format("%.2fMB", (double) byteCount / 1048576);
+        } else {
+            return String.format("%.2fGB", (double) byteCount / 1073741824);
+        }
     }
 
     /* Checks if external storage is available for read and write */

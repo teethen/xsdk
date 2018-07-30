@@ -8,6 +8,8 @@ import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.widget.TextView;
 
+import com.teethen.sdk.xutil.FileUtil;
+
 import java.lang.reflect.Field;
 
 /**
@@ -29,7 +31,7 @@ public class UpDialog {
             StringBuilder sb = new StringBuilder();
             sb.append("名称：").append(appInfo.appName);
             sb.append("\n版本：").append(appInfo.appVersionName);
-            sb.append("\n大小：").append(UpdaterUtil.getMeasureSize(appInfo.appSize));
+            sb.append("\n大小：").append(FileUtil.getMeasureSize(appInfo.appSize));
             if (!TextUtils.isEmpty(appInfo.appChangeLog)) {
                 sb.append("\n\n更新内容：").append(appInfo.appChangeLog);
             }

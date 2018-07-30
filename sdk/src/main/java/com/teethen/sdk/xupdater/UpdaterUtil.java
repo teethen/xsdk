@@ -178,21 +178,6 @@ public class UpdaterUtil {
         }
     }
 
-    @SuppressLint("DefaultLocale")
-    public static String getMeasureSize(long byteCount) {
-        if (byteCount <= 0) {
-            return "0B";
-        } else if (byteCount < 1024) {
-            return String.format("%.2fB", (double) byteCount);
-        } else if (byteCount < 1048576) {
-            return String.format("%.2fKB", (double) byteCount / 1024);
-        } else if (byteCount < 1073741824) {
-            return String.format("%.2fMB", (double) byteCount / 1048576);
-        } else {
-            return String.format("%.2fGB", (double) byteCount / 1073741824);
-        }
-    }
-
     private static final Handler handler = new Handler(Looper.getMainLooper());
 
     public static void runOnMainThread(Runnable runnable) {

@@ -101,7 +101,7 @@ public class DocUtil {
                         .setIsCropped(true)
                         .setFixAspectRatio(false)
                         .setMinVideoDuration(5 * 1000)
-                        .setMaxVideoDuration(60 * 1000)
+                        .setMaxVideoDuration(10 * 1000)
                         .setShowWarningBeforeRecordVideo(true)
                         .setMediaListSelected(mediaSelectedList)
                         .build();
